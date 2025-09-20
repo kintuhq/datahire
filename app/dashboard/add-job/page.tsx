@@ -45,16 +45,16 @@ export default function NewJobPage() {
             <div className="flex items-center">
               <img
                 src="/logo.png"
-                alt="Math Jobs logo"
+                alt="DataHire logo"
                 className="h-14 w-14 mr-2"
               />
               <div>
                 <a href="/" className="cursor-pointer">
                   <h1 className="text-2xl font-bold">
-                    <span className="text-black">Math</span> <span className="text-orange-500">Jobs</span>
+                    <span className="text-black">Data</span> <span className="text-blue-600">Hire</span>
                   </h1>
                 </a>
-                <p className="text-muted-foreground -mt-1 text-sm">Global math jobs</p>
+                <p className="text-muted-foreground -mt-1 text-sm">Data Analyst Jobs</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -67,7 +67,7 @@ export default function NewJobPage() {
               <Button
                 onClick={() => router.push("/dashboard")}
                 variant="outline"
-                className="cursor-pointer hover:bg-orange-500 hover:text-white hover:border-orange-500"
+                className="cursor-pointer hover:bg-blue-600 hover:text-white hover:border-blue-600"
               >
                 Back to Dashboard
               </Button>
@@ -79,9 +79,9 @@ export default function NewJobPage() {
       <div className="max-w-[800px] mx-auto px-6 py-12">
 
         <div className="mb-6">
-          <h2 className="text-3xl font-bold text-gray-900">Post a Math Teaching Job</h2>
+          <h2 className="text-3xl font-bold text-gray-900">Post a Data Analyst Job</h2>
           <p className="text-gray-600 mt-2">
-            Share your opportunity with math teachers worldwide - completely free!
+            Share your opportunity with data analysts worldwide - completely free!
           </p>
         </div>
 
@@ -102,21 +102,21 @@ export default function NewJobPage() {
               <div className="flex items-center mb-3">
                 <img
                   src="/logo.png"
-                  alt="MathJobs Logo"
+                  alt="DataHire Logo"
                   className="h-8 w-8 mr-2"
                 />
                 <h3 className="text-2xl font-bold text-foreground">
-                  Math <span className="text-primary">Jobs</span>
+                  Data <span className="text-primary">Hire</span>
                 </h3>
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
-                The global platform connecting passionate math educators with schools and universities worldwide.
+                The global platform connecting talented data analysts with companies worldwide.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">For Teachers</h4>
+              <h4 className="font-semibold text-foreground mb-3">For Analysts</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="/" className="hover:text-primary transition-colors">
@@ -130,7 +130,7 @@ export default function NewJobPage() {
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Teaching Tips
+                    Data Analysis Tips
                   </a>
                 </li>
               </ul>
@@ -138,7 +138,7 @@ export default function NewJobPage() {
 
             {/* For Schools */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">For Schools</h4>
+              <h4 className="font-semibold text-foreground mb-3">For Companies</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="/dashboard" className="hover:text-primary transition-colors">
@@ -162,7 +162,7 @@ export default function NewJobPage() {
           {/* Bottom Section */}
           <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2025 Math Jobs.
+              © 2025 DataHire.
             </div>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">

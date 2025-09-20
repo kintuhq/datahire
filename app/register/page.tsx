@@ -73,7 +73,7 @@ export default function RegisterPage() {
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Create an account</CardTitle>
               <CardDescription>
-                Join Math Jobs to start posting math teaching positions
+                Join DataHire to start posting data analyst positions
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -122,7 +122,7 @@ export default function RegisterPage() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 cursor-pointer"
+                  className="w-full bg-blue-600 hover:bg-blue-700 cursor-pointer"
                   disabled={isLoading}
                 >
                   {isLoading ? "Creating account..." : "Create account"}

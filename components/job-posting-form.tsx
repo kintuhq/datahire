@@ -17,9 +17,9 @@ interface Job {
   location: string
   type: string
   jobSpec: string
-  aboutSchool: string
+  aboutCompany: string
   howToApply: string
-  school: {
+  company: {
     id: string
     name: string
     logo: string
@@ -40,12 +40,12 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
     city: "",
     type: "",
     jobSpec: "",
-    aboutSchool: "",
+    aboutCompany: "",
     applicationEmail: "",
     applicationFormUrl: "",
   })
 
-  const [schoolData, setSchoolData] = useState({
+  const [companyData, setCompanyData] = useState({
     name: "",
     url: "",
   })
@@ -57,35 +57,35 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
     success: false
   })
 
-  const [isLoadingSchool, setIsLoadingSchool] = useState(true)
+  const [isLoadingCompany, setIsLoadingCompany] = useState(true)
   const [isFormDataLoaded, setIsFormDataLoaded] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
-    // Only fetch global school data when creating a new job, not when editing
+    // Only fetch global company data when creating a new job, not when editing
     if (!editingJob) {
-      fetchSchoolData()
+      fetchCompanyData()
       setIsFormDataLoaded(true)
     } else {
-      setIsLoadingSchool(false)
+      setIsLoadingCompany(false)
       // Form data will be loaded in the editingJob useEffect
     }
   }, [editingJob])
 
-  const fetchSchoolData = async () => {
+  const fetchCompanyData = async () => {
     try {
-      const response = await fetch("/api/school/profile")
+      const response = await fetch("/api/company/profile")
       if (response.ok) {
-        const school = await response.json()
-        setSchoolData({
-          name: school.name || "",
-          url: school.url || "",
+        const company = await response.json()
+        setCompanyData({
+          name: company.name || "",
+          url: company.url || "",
         })
       }
     } catch (error) {
-      console.error("Error fetching school data:", error)
+      console.error("Error fetching company data:", error)
     } finally {
-      setIsLoadingSchool(false)
+      setIsLoadingCompany(false)
     }
   }
 
@@ -134,7 +134,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
         city: city,
         type: editingJob.type,
         jobSpec: editingJob.jobSpec,
-        aboutSchool: editingJob.aboutSchool,
+        aboutCompany: editingJob.aboutCompany,
         applicationEmail: applicationEmail,
         applicationFormUrl: applicationFormUrl,
       }
@@ -150,17 +150,17 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
       setFormData(newFormData)
       setIsFormDataLoaded(true)
 
-      // Set school data from job record when editing
-      setSchoolData({
-        name: editingJob.school?.name || "",
-        url: editingJob.school?.url || "",
+      // Set company data from job record when editing
+      setCompanyData({
+        name: editingJob.company?.name || "",
+        url: editingJob.company?.url || "",
       })
 
-      // Set the school logo if available
-      if (editingJob.school?.logo) {
+      // Set the company logo if available
+      if (editingJob.company?.logo) {
         setLogoState(prev => ({
           ...prev,
-          currentLogo: editingJob.school.logo
+          currentLogo: editingJob.company.logo
         }))
       }
     }
@@ -180,12 +180,12 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
       jobSpec: !!formData.jobSpec,
       hasApplicationMethod,
       hasLogo: !!logoState.currentLogo,
-      schoolName: !!schoolData.name,
+      companyName: !!companyData.name,
       formData,
       logoState
     })
 
-    if (formData.title && location && formData.jobSpec && hasApplicationMethod && logoState.currentLogo && schoolData.name) {
+    if (formData.title && location && formData.jobSpec && hasApplicationMethod && logoState.currentLogo && companyData.name) {
       // Prepare data to match API schema
       const howToApply = formData.applicationEmail && formData.applicationFormUrl
         ? `Email: ${formData.applicationEmail}\nForm: ${formData.applicationFormUrl}`
@@ -196,13 +196,13 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
       const submitData: any = {
         title: formData.title,
         location,
-        shortBio: formData.aboutSchool.length > 200 ? formData.aboutSchool.substring(0, 200) : formData.aboutSchool, // Use first 200 chars of aboutSchool as shortBio
+        shortBio: formData.aboutCompany.length > 200 ? formData.aboutCompany.substring(0, 200) : formData.aboutCompany, // Use first 200 chars of aboutCompany as shortBio
         jobSpec: formData.jobSpec,
-        aboutSchool: formData.aboutSchool,
+        aboutCompany: formData.aboutCompany,
         howToApply: howToApply,
-        schoolName: schoolData.name,
-        schoolUrl: schoolData.url,
-        schoolLogo: logoState.currentLogo,
+        companyName: companyData.name,
+        companyUrl: companyData.url,
+        companyLogo: logoState.currentLogo,
       }
 
       // Only include type if it's not empty
@@ -220,7 +220,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
           city: "",
           type: "",
           jobSpec: "",
-          aboutSchool: "",
+          aboutCompany: "",
           applicationEmail: "",
           applicationFormUrl: "",
         })
@@ -232,8 +232,8 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
       if (!location) missingFields.push('Location (Country/City)')
       if (!formData.jobSpec) missingFields.push('Job Specification')
       if (!hasApplicationMethod) missingFields.push('Application Method (Email or Form URL)')
-      if (!logoState.currentLogo) missingFields.push('School Logo')
-      if (!schoolData.name) missingFields.push('School Name')
+      if (!logoState.currentLogo) missingFields.push('Company Logo')
+      if (!companyData.name) missingFields.push('Company Name')
 
       alert(`Please fill in the following required fields:\n• ${missingFields.join('\n• ')}`)
     }
@@ -374,7 +374,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
           if (updateResponse.status === 401) {
             throw new Error("Please log in to update the logo")
           }
-          throw new Error(errorData.error || "Failed to update school logo")
+          throw new Error(errorData.error || "Failed to update company logo")
         }
       }
 
@@ -424,12 +424,12 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="text-2xl">
-                {editingJob ? "Edit Job Posting" : "Post a Math Teaching Job"}
+                {editingJob ? "Edit Job Posting" : "Post a Data Analyst Job"}
               </CardTitle>
               <CardDescription>
                 {editingJob
                   ? "Update your job posting details"
-                  : "Share your opportunity with math teachers worldwide - completely free!"
+                  : "Share your opportunity with data analysts worldwide - completely free!"
                 }
               </CardDescription>
             </div>
@@ -599,68 +599,68 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
               />
             </div>
 
-            {/* School Information Section */}
+            {/* Company Information Section */}
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">School Information</h3>
-                <p className="text-sm text-gray-600">Tell teachers about your institution</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Company Information</h3>
+                <p className="text-sm text-gray-600">Tell data analysts about your company</p>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="schoolName" className="text-xl font-semibold">School Name *</Label>
-                <p className="text-sm text-gray-400 -mt-1 mb-2">e.g. Jefferson High School</p>
+                <Label htmlFor="companyName" className="text-xl font-semibold">Company Name *</Label>
+                <p className="text-sm text-gray-400 -mt-1 mb-2">e.g. TechCorp Analytics</p>
                 <div className="w-full md:w-1/2">
                   <Input
-                    id="schoolName"
-                    value={schoolData.name}
-                    onChange={(e) => handleSchoolChange("name", e.target.value)}
+                    id="companyName"
+                    value={companyData.name}
+                    onChange={(e) => handleCompanyChange("name", e.target.value)}
                     required
                     className="bg-white border-gray-300 text-gray-900"
-                    disabled={isLoadingSchool}
+                    disabled={isLoadingCompany}
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="schoolUrl" className="text-xl font-semibold">School Website</Label>
-                <p className="text-sm text-gray-400 -mt-1 mb-2">e.g. https://www.jeffersonhigh.edu</p>
+                <Label htmlFor="companyUrl" className="text-xl font-semibold">Company Website</Label>
+                <p className="text-sm text-gray-400 -mt-1 mb-2">e.g. https://www.techcorp.com</p>
                 <div className="w-full md:w-1/2">
                   <Input
-                    id="schoolUrl"
+                    id="companyUrl"
                     type="url"
-                    value={schoolData.url}
-                    onChange={(e) => handleSchoolChange("url", e.target.value)}
+                    value={companyData.url}
+                    onChange={(e) => handleCompanyChange("url", e.target.value)}
                     placeholder="https://"
                     className="bg-white border-gray-300 text-gray-900"
-                    disabled={isLoadingSchool}
+                    disabled={isLoadingCompany}
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="aboutSchool" className="text-xl font-semibold">About the School *</Label>
-                <p className="text-sm text-gray-400 -mt-1 mb-2">Tell teachers about your school, culture, mission, values</p>
+                <Label htmlFor="aboutCompany" className="text-xl font-semibold">About the Company *</Label>
+                <p className="text-sm text-gray-400 -mt-1 mb-2">Tell data analysts about your company, culture, mission, values</p>
                 <Textarea
-                  id="aboutSchool"
-                  value={formData.aboutSchool}
-                  onChange={(e) => handleChange("aboutSchool", e.target.value)}
+                  id="aboutCompany"
+                  value={formData.aboutCompany}
+                  onChange={(e) => handleChange("aboutCompany", e.target.value)}
                   rows={10}
                   required
                   className="bg-white border-gray-300 text-gray-900 min-h-[240px]"
                 />
               </div>
 
-              {/* School Logo Upload */}
+              {/* Company Logo Upload */}
               <div className="space-y-2">
-                <Label className="text-xl font-semibold">School Logo *</Label>
-                <p className="text-sm text-gray-400 -mt-1 mb-2">Upload your school's logo to make job postings more recognizable. Square images work best.</p>
+                <Label className="text-xl font-semibold">Company Logo *</Label>
+                <p className="text-sm text-gray-400 -mt-1 mb-2">Upload your company's logo to make job postings more recognizable. Square images work best.</p>
                 <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 bg-white">
                   {logoState.currentLogo ? (
                     <div className="text-center">
                       <img
                         key={logoState.currentLogo}
                         src={logoState.currentLogo}
-                        alt="School logo"
+                        alt="Company logo"
                         className="w-20 h-20 rounded-lg object-cover mx-auto mb-3"
                       />
                       <p className="text-sm text-gray-600 mb-2">Logo uploaded successfully!</p>
@@ -691,7 +691,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
                         <div>
                           <Upload className="w-8 h-8 mx-auto mb-2 text-gray-400" />
                           <p className="text-sm font-medium text-gray-700 mb-1">
-                            {logoState.isUploading ? "Uploading..." : "Click to upload school logo"}
+                            {logoState.isUploading ? "Uploading..." : "Click to upload company logo"}
                           </p>
                           <p className="text-xs text-gray-500">
                             PNG, JPG, GIF up to 5MB • Square images recommended
@@ -732,7 +732,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
                     type="email"
                     value={formData.applicationEmail}
                     onChange={(e) => handleChange("applicationEmail", e.target.value)}
-                    placeholder="hr@school.edu"
+                    placeholder="hr@company.com"
                     className="bg-white border-gray-300 text-gray-900"
                   />
                 </div>
@@ -744,7 +744,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
                     type="url"
                     value={formData.applicationFormUrl}
                     onChange={(e) => handleChange("applicationFormUrl", e.target.value)}
-                    placeholder="https://school.edu/apply"
+                    placeholder="https://company.com/apply"
                     className="bg-white border-gray-300 text-gray-900"
                   />
                 </div>
@@ -752,7 +752,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
             </div>
 
             <div className="flex gap-3 pt-4">
-              <Button type="submit" className="flex-1 h-12 cursor-pointer bg-orange-500 hover:bg-orange-600 hover:shadow-lg transition-all duration-200 text-white">
+              <Button type="submit" className="flex-1 h-12 cursor-pointer bg-blue-600 hover:bg-blue-700 hover:shadow-lg transition-all duration-200 text-white">
                 {editingJob ? "Update Job Posting" : "Post Job for Free"}
               </Button>
               {isModal && (
@@ -764,7 +764,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
 
             <div className="text-center mt-4">
               <p className="text-sm text-gray-600">
-                Need any help? <a href="/contact" className="text-orange-500 hover:text-orange-600 underline">Contact us</a>
+                Need any help? <a href="/contact" className="text-blue-600 hover:text-blue-700 underline">Contact us</a>
               </p>
             </div>
           </form>

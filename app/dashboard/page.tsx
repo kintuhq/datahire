@@ -17,7 +17,7 @@ interface Job {
   createdAt: string
 }
 
-interface School {
+interface Company {
   id: string
   name: string
   email: string
@@ -27,7 +27,7 @@ interface School {
 
 export default function DashboardPage() {
   const [jobs, setJobs] = useState<Job[]>([])
-  const [school, setSchool] = useState<School | null>(null)
+  const [company, setCompany] = useState<Company | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
 
@@ -37,7 +37,7 @@ export default function DashboardPage() {
 
   const fetchDashboardData = async () => {
     try {
-      // Get school's jobs
+      // Get company's jobs
       const jobsResponse = await fetch("/api/dashboard/jobs")
       if (jobsResponse.status === 401) {
         router.push("/login")
@@ -47,7 +47,7 @@ export default function DashboardPage() {
       if (jobsResponse.ok) {
         const jobsData = await jobsResponse.json()
         setJobs(jobsData.jobs)
-        setSchool(jobsData.school)
+        setCompany(jobsData.company)
       }
     } catch (error) {
       console.error("Error fetching dashboard data:", error)
@@ -87,7 +87,7 @@ export default function DashboardPage() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading dashboard...</p>
         </div>
       </div>
@@ -103,16 +103,16 @@ export default function DashboardPage() {
             <div className="flex items-center">
               <img
                 src="/logo.png"
-                alt="Math Jobs logo"
+                alt="DataHire logo"
                 className="h-14 w-14 mr-2"
               />
               <div>
                 <a href="/" className="cursor-pointer">
                   <h1 className="text-2xl font-bold">
-                    <span className="text-black">Math</span> <span className="text-orange-500">Jobs</span>
+                    <span className="text-black">Data</span> <span className="text-blue-600">Hire</span>
                   </h1>
                 </a>
-                <p className="text-muted-foreground -mt-1 text-sm">Global math jobs</p>
+                <p className="text-muted-foreground -mt-1 text-sm">Data Analyst Jobs</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -124,7 +124,7 @@ export default function DashboardPage() {
               </button>
               <Button
                 onClick={() => router.push("/dashboard/add-job")}
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-semibold text-white bg-gradient-to-r from-red-500 to-amber-500 rounded-lg shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-300 px-6 py-3 h-11 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-300 px-6 py-3 h-11 cursor-pointer"
               >
                 <Plus className="w-5 h-5 mr-1" />
                 Add New Job
@@ -186,7 +186,7 @@ export default function DashboardPage() {
                         variant="ghost"
                         size="sm"
                         onClick={() => router.push(`/jobs/${job.shortId}`)}
-                        className="text-gray-600 cursor-pointer hover:!text-orange-300 h-8 w-8 p-0"
+                        className="text-gray-600 cursor-pointer hover:!text-blue-500 h-8 w-8 p-0"
                       >
                         <Eye className="w-4 h-4" />
                       </Button>
@@ -194,7 +194,7 @@ export default function DashboardPage() {
                         variant="ghost"
                         size="sm"
                         onClick={() => router.push(`/dashboard/edit-job/${job.id}`)}
-                        className="text-gray-600 cursor-pointer hover:!text-orange-300 h-8 w-8 p-0"
+                        className="text-gray-600 cursor-pointer hover:!text-blue-500 h-8 w-8 p-0"
                       >
                         <Edit className="w-4 h-4" />
                       </Button>
@@ -202,7 +202,7 @@ export default function DashboardPage() {
                         variant="ghost"
                         size="sm"
                         onClick={() => handleDeleteJob(job.id)}
-                        className="text-red-600 cursor-pointer hover:!text-orange-300 h-8 w-8 p-0"
+                        className="text-red-600 cursor-pointer hover:!text-red-500 h-8 w-8 p-0"
                       >
                         <Trash2 className="w-4 h-4" />
                       </Button>
@@ -234,21 +234,21 @@ export default function DashboardPage() {
               <div className="flex items-center mb-3">
                 <img
                   src="/logo.png"
-                  alt="MathJobs Logo"
+                  alt="DataHire Logo"
                   className="h-8 w-8 mr-2"
                 />
                 <h3 className="text-2xl font-bold text-foreground">
-                  Math <span className="text-primary">Jobs</span>
+                  Data <span className="text-primary">Hire</span>
                 </h3>
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
-                The global platform connecting passionate math educators with schools and universities worldwide.
+                The global platform connecting talented data analysts with companies worldwide.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">For Teachers</h4>
+              <h4 className="font-semibold text-foreground mb-3">For Analysts</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="/" className="hover:text-primary transition-colors">
@@ -262,7 +262,7 @@ export default function DashboardPage() {
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Teaching Tips
+                    Data Analysis Tips
                   </a>
                 </li>
               </ul>
@@ -270,7 +270,7 @@ export default function DashboardPage() {
 
             {/* For Schools */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">For Schools</h4>
+              <h4 className="font-semibold text-foreground mb-3">For Companies</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="/dashboard/add-job" className="hover:text-primary transition-colors">
@@ -294,7 +294,7 @@ export default function DashboardPage() {
           {/* Bottom Section */}
           <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2025 Math Jobs.
+              © 2025 DataHire.
             </div>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">
