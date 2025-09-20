@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { schools } from '@/lib/db/schema'
+import { companies } from '@/lib/db/schema'
 import { requireAuth } from '@/lib/auth'
 import { eq } from 'drizzle-orm'
 import { z } from 'zod'
@@ -15,25 +15,25 @@ export async function PUT(request: NextRequest) {
     const body = await request.json()
     const { logoUrl } = logoUpdateSchema.parse(body)
 
-    const [updatedSchool] = await db
-      .update(schools)
+    const [updatedCompany] = await db
+      .update(companies)
       .set({
         logo: logoUrl,
         updatedAt: new Date(),
       })
-      .where(eq(schools.id, session.schoolId))
+      .where(eq(companies.id, session.companyId))
       .returning()
 
-    if (!updatedSchool) {
-      return NextResponse.json({ error: 'School not found' }, { status: 404 })
+    if (!updatedCompany) {
+      return NextResponse.json({ error: 'Company not found' }, { status: 404 })
     }
 
     return NextResponse.json({
       success: true,
-      logoUrl: updatedSchool.logo,
+      logoUrl: updatedCompany.logo,
     })
   } catch (error) {
-    console.error('Error updating school logo:', error)
+    console.error('Error updating company logo:', error)
 
     if (error instanceof z.ZodError) {
       return NextResponse.json({ error: 'Invalid logo URL' }, { status: 400 })

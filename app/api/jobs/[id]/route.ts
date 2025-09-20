@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { jobs, schools } from '@/lib/db/schema'
+import { jobs, companies } from '@/lib/db/schema'
 import { requireAuth } from '@/lib/auth'
 import { eq, and, or } from 'drizzle-orm'
 import { z } from 'zod'
@@ -12,11 +12,11 @@ const jobUpdateSchema = z.object({
   type: z.enum(['full-time', 'part-time', 'private', 'contractor']).optional(),
   shortBio: z.string().min(1).optional(),
   jobSpec: z.string().min(1).optional(),
-  aboutSchool: z.string().min(1).optional(),
+  aboutCompany: z.string().min(1).optional(),
   howToApply: z.string().min(1).optional(),
-  schoolName: z.string().min(1).optional(),
-  schoolUrl: z.string().url().optional(),
-  schoolLogo: z.string().url().optional(),
+  companyName: z.string().min(1).optional(),
+  companyUrl: z.string().url().optional(),
+  companyLogo: z.string().url().optional(),
   published: z.boolean().optional(),
 })
 
@@ -38,20 +38,20 @@ export async function GET(
         type: jobs.type,
         shortBio: jobs.shortBio,
         jobSpec: jobs.jobSpec,
-        aboutSchool: jobs.aboutSchool,
+        aboutCompany: jobs.aboutCompany,
         howToApply: jobs.howToApply,
         published: jobs.published,
         createdAt: jobs.createdAt,
         updatedAt: jobs.updatedAt,
-        school: {
-          id: schools.id,
-          name: jobs.schoolName,
-          logo: jobs.schoolLogo,
-          url: jobs.schoolUrl,
+        company: {
+          id: companies.id,
+          name: jobs.companyName,
+          logo: jobs.companyLogo,
+          url: jobs.companyUrl,
         },
       })
       .from(jobs)
-      .innerJoin(schools, eq(jobs.schoolId, schools.id))
+      .innerJoin(companies, eq(jobs.companyId, companies.id))
       .where(isShortId ? eq(jobs.shortId, params.id) : eq(jobs.id, params.id))
       .limit(1)
 
@@ -88,7 +88,7 @@ export async function PUT(
       .where(
         and(
           isShortId ? eq(jobs.shortId, params.id) : eq(jobs.id, params.id),
-          eq(jobs.schoolId, session.schoolId)
+          eq(jobs.companyId, session.companyId)
         )
       )
       .returning()
@@ -133,7 +133,7 @@ export async function DELETE(
       .where(
         and(
           isShortId ? eq(jobs.shortId, params.id) : eq(jobs.id, params.id),
-          eq(jobs.schoolId, session.schoolId)
+          eq(jobs.companyId, session.companyId)
         )
       )
       .returning()

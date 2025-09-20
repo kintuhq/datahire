@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { schools } from '@/lib/db/schema'
+import { companies } from '@/lib/db/schema'
 import { consumePasswordResetToken, hashPassword } from '@/lib/auth'
 import { eq } from 'drizzle-orm'
 import { z } from 'zod'
@@ -24,12 +24,12 @@ export async function POST(request: NextRequest) {
 
     // Update the password
     const hashedPassword = await hashPassword(password)
-    await db.update(schools)
+    await db.update(companies)
       .set({
         password: hashedPassword,
         updatedAt: new Date()
       })
-      .where(eq(schools.email, email))
+      .where(eq(companies.email, email))
 
     return NextResponse.json({ success: true })
   } catch (error) {

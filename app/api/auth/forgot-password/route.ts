@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { schools } from '@/lib/db/schema'
+import { companies } from '@/lib/db/schema'
 import { createPasswordResetToken } from '@/lib/auth'
 import { sendPasswordResetEmail } from '@/lib/email'
 import { eq } from 'drizzle-orm'
@@ -15,12 +15,12 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { email } = forgotPasswordSchema.parse(body)
 
-    // Check if school exists
-    const existingSchool = await db.select().from(schools).where(eq(schools.email, email)).limit(1)
+    // Check if company exists
+    const existingCompany = await db.select().from(companies).where(eq(companies.email, email)).limit(1)
 
     // Always return success to prevent email enumeration attacks
     // But only send email if the account actually exists
-    if (existingSchool.length > 0) {
+    if (existingCompany.length > 0) {
       try {
         const resetToken = await createPasswordResetToken(email)
         await sendPasswordResetEmail(email, resetToken)
