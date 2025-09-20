@@ -7,15 +7,15 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
   const resetUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password?token=${resetToken}`
 
   await resend.emails.send({
-    from: `Math Jobs <${process.env.EMAIL_FROM_ADDRESS!}>`,
+    from: `DataHire <${process.env.EMAIL_FROM_ADDRESS!}>`,
     to: email,
-    subject: 'Reset your Math Jobs password',
+    subject: 'Reset your DataHire password',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h1 style="color: #333;">Reset Your Password</h1>
-        <p>You requested to reset your password for your Math Jobs account.</p>
+        <p>You requested to reset your password for your DataHire account.</p>
         <p>Click the link below to reset your password:</p>
-        <a href="${resetUrl}" style="background-color: #f97316; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block;">Reset Password</a>
+        <a href="${resetUrl}" style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block;">Reset Password</a>
         <p style="margin-top: 20px; color: #666;">This link will expire in 1 hour.</p>
         <p style="color: #666;">If you didn't request this password reset, you can safely ignore this email.</p>
       </div>
@@ -24,49 +24,49 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
 }
 
 export async function sendEmailVerificationEmail(email: string, verificationToken: string, baseUrl?: string) {
-  const verificationUrl = `${baseUrl || process.env.NEXT_PUBLIC_BASE_URL || 'https://mathjobs.xyz'}/verify-email?token=${verificationToken}`
+  const verificationUrl = `${baseUrl || process.env.NEXT_PUBLIC_BASE_URL || 'https://datahire.co'}/verify-email?token=${verificationToken}`
 
   await resend.emails.send({
-    from: `Math Jobs <${process.env.EMAIL_FROM_ADDRESS!}>`,
+    from: `DataHire <${process.env.EMAIL_FROM_ADDRESS!}>`,
     to: email,
-    subject: 'Verify your Math Jobs email address',
+    subject: 'Verify your DataHire email address',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h1 style="color: #333;">Verify your email address</h1>
-        <p>Welcome to Math Jobs! Please verify your email address to start posting math teaching positions.</p>
+        <p>Welcome to DataHire! Please verify your email address to start posting data analyst positions.</p>
         <p>Click the button below to verify your email address:</p>
-        <a href="${verificationUrl}" style="background-color: #f97316; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block; margin: 20px 0;">Verify Email Address</a>
+        <a href="${verificationUrl}" style="background-color: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block; margin: 20px 0;">Verify Email Address</a>
         <p style="margin-top: 20px; color: #666;">This link will expire in 24 hours.</p>
-        <p style="color: #666;">If you didn't create an account with Math Jobs, you can safely ignore this email.</p>
+        <p style="color: #666;">If you didn't create an account with DataHire, you can safely ignore this email.</p>
         <p style="color: #666; font-size: 14px; margin-top: 30px;">
           If the button above doesn't work, copy and paste this link into your browser:<br>
-          <a href="${verificationUrl}" style="color: #f97316; word-break: break-all;">${verificationUrl}</a>
+          <a href="${verificationUrl}" style="color: #2563eb; word-break: break-all;">${verificationUrl}</a>
         </p>
       </div>
     `,
   })
 }
 
-export async function sendWelcomeEmail(email: string, schoolName: string, baseUrl?: string) {
-  const loginUrl = `${baseUrl || process.env.NEXT_PUBLIC_BASE_URL || 'https://mathjobs.xyz'}/login`
+export async function sendWelcomeEmail(email: string, companyName: string, baseUrl?: string) {
+  const loginUrl = `${baseUrl || process.env.NEXT_PUBLIC_BASE_URL || 'https://datahire.co'}/login`
 
   await resend.emails.send({
-    from: `Math Jobs <${process.env.EMAIL_FROM_ADDRESS!}>`,
+    from: `DataHire <${process.env.EMAIL_FROM_ADDRESS!}>`,
     to: email,
-    subject: 'Welcome to Math Jobs!',
+    subject: 'Welcome to DataHire!',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h1 style="color: #333;">Welcome to Math Jobs!</h1>
-        <p>Thank you for joining Math Jobs! You can now start posting math teaching positions for free.</p>
+        <h1 style="color: #333;">Welcome to DataHire!</h1>
+        <p>Thank you for joining DataHire! You can now start posting data analyst positions for free.</p>
         <p>To get started:</p>
         <ol>
-          <li><a href="${loginUrl}" style="color: #f97316; text-decoration: none;">Log in to your account</a></li>
+          <li><a href="${loginUrl}" style="color: #2563eb; text-decoration: none;">Log in to your account</a></li>
           <li>Click "Post a Job" to create your first job posting</li>
           <li>Fill out the job details and publish</li>
         </ol>
-        <p>Your job postings will be visible to math teachers worldwide.</p>
+        <p>Your job postings will be visible to data analysts worldwide.</p>
         <p>If you have any questions, feel free to reach out to us.</p>
-        <p>Best regards,<br>The Math Jobs Team</p>
+        <p>Best regards,<br>The DataHire Team</p>
       </div>
     `,
   })
@@ -74,20 +74,20 @@ export async function sendWelcomeEmail(email: string, schoolName: string, baseUr
 
 export async function sendNewsletterWelcomeEmail(email: string, name?: string) {
   await resend.emails.send({
-    from: `Math Jobs <${process.env.EMAIL_FROM_ADDRESS!}>`,
+    from: `DataHire <${process.env.EMAIL_FROM_ADDRESS!}>`,
     to: email,
-    subject: 'Welcome to Math Jobs Newsletter!',
+    subject: 'Welcome to DataHire Newsletter!',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #f97316; margin: 0;">Math<span style="color: #333;">Jobs</span></h1>
-          <p style="color: #666; margin: 5px 0;">Worldwide Math Teaching Opportunities</p>
+          <h1 style="color: #2563eb; margin: 0;">Data<span style="color: #333;">Hire</span></h1>
+          <p style="color: #666; margin: 5px 0;">Worldwide Data Analyst Opportunities</p>
         </div>
 
         <h2 style="color: #333;">Welcome to our newsletter${name ? `, ${escapeHtml(name)}` : ''}!</h2>
 
         <p style="color: #555; line-height: 1.6;">
-          Thank you for subscribing to Math Jobs newsletter! You'll now receive notifications whenever new math teaching positions are posted on our platform.
+          Thank you for subscribing to DataHire newsletter! You'll now receive notifications whenever new data analyst positions are posted on our platform.
         </p>
 
         <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -95,21 +95,21 @@ export async function sendNewsletterWelcomeEmail(email: string, name?: string) {
           <ul style="color: #555; line-height: 1.6;">
             <li>🔔 New job posting alerts</li>
             <li>📍 Opportunities worldwide</li>
-            <li>🎯 Positions at all levels (K-12, university)</li>
+            <li>🎯 Positions at all levels (junior, senior, lead)</li>
             <li>💼 Full-time and part-time opportunities</li>
           </ul>
         </div>
 
         <p style="color: #555; line-height: 1.6;">
           In the meantime, feel free to browse our current opportunities at
-          <a href="${process.env.NEXT_PUBLIC_BASE_URL}" style="color: #f97316; text-decoration: none;">mathjobs.xyz</a>
+          <a href="${process.env.NEXT_PUBLIC_BASE_URL}" style="color: #2563eb; text-decoration: none;">datahire.co</a>
         </p>
 
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center;">
           <p style="color: #888; font-size: 14px; margin: 0;">
-            You're receiving this because you subscribed to Math Jobs newsletter.<br>
+            You're receiving this because you subscribed to DataHire newsletter.<br>
             <a href="#" style="color: #888; text-decoration: underline;">Unsubscribe</a> |
-            <a href="${process.env.NEXT_PUBLIC_BASE_URL}" style="color: #888; text-decoration: underline;">Visit Math Jobs</a>
+            <a href="${process.env.NEXT_PUBLIC_BASE_URL}" style="color: #888; text-decoration: underline;">Visit DataHire</a>
           </p>
         </div>
       </div>
@@ -119,25 +119,25 @@ export async function sendNewsletterWelcomeEmail(email: string, name?: string) {
 
 export async function sendJobNotificationEmail(subscriberEmail: string, subscriberName: string, job: any) {
   await resend.emails.send({
-    from: `Math Jobs <${process.env.EMAIL_FROM_ADDRESS!}>`,
+    from: `DataHire <${process.env.EMAIL_FROM_ADDRESS!}>`,
     to: subscriberEmail,
-    subject: `New Math Teaching Position: ${job.title} at ${job.school.name}`,
+    subject: `New Data Analyst Position: ${job.title} at ${job.company.name}`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #f97316; margin: 0;">Math<span style="color: #333;">Jobs</span></h1>
+          <h1 style="color: #2563eb; margin: 0;">Data<span style="color: #333;">Hire</span></h1>
           <p style="color: #666; margin: 5px 0;">New Job Alert</p>
         </div>
 
-        <h2 style="color: #333;">Hi ${escapeHtml(subscriberName) || 'Math Educator'}!</h2>
+        <h2 style="color: #333;">Hi ${escapeHtml(subscriberName) || 'Data Analyst'}!</h2>
 
         <p style="color: #555; line-height: 1.6;">
-          A new math teaching position has been posted that might interest you:
+          A new data analyst position has been posted that might interest you:
         </p>
 
-        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #f97316;">
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2563eb;">
           <h3 style="color: #333; margin-top: 0;">${escapeHtml(job.title)}</h3>
-          <p style="color: #f97316; font-weight: bold; margin: 5px 0;">${escapeHtml(job.school.name)}</p>
+          <p style="color: #2563eb; font-weight: bold; margin: 5px 0;">${escapeHtml(job.company.name)}</p>
           <p style="color: #666; margin: 5px 0;">📍 ${escapeHtml(job.location)}</p>
           <p style="color: #666; margin: 5px 0;">💼 ${job.type === 'full-time' ? 'Full-time' : 'Part-time'}</p>
 
@@ -147,7 +147,7 @@ export async function sendJobNotificationEmail(subscriberEmail: string, subscrib
 
           <div style="text-align: center; margin-top: 20px;">
             <a href="${process.env.NEXT_PUBLIC_BASE_URL}/jobs/${job.shortId}"
-               style="background: #f97316; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: bold;">
+               style="background: #2563eb; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: bold;">
               View Full Details
             </a>
           </div>
@@ -159,7 +159,7 @@ export async function sendJobNotificationEmail(subscriberEmail: string, subscrib
 
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center;">
           <p style="color: #888; font-size: 14px; margin: 0;">
-            You're receiving this because you subscribed to Math Jobs job alerts.<br>
+            You're receiving this because you subscribed to DataHire job alerts.<br>
             <a href="#" style="color: #888; text-decoration: underline;">Unsubscribe</a> |
             <a href="${process.env.NEXT_PUBLIC_BASE_URL}" style="color: #888; text-decoration: underline;">Browse More Jobs</a>
           </p>

@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
 import { cookies } from 'next/headers'
 import { db } from './db'
-import { schools, emailVerificationTokens, passwordResetTokens } from './db/schema'
+import { companies, emailVerificationTokens, passwordResetTokens } from './db/schema'
 import { eq, lt } from 'drizzle-orm'
 import crypto from 'crypto'
 
@@ -12,7 +12,7 @@ if (!JWT_SECRET) {
 }
 
 export interface SessionData {
-  schoolId: string
+  companyId: string
   email: string
 }
 
@@ -45,9 +45,9 @@ export async function getSession(): Promise<SessionData | null> {
   const session = verifyToken(token.value)
   if (!session) return null
 
-  // Verify school still exists
-  const school = await db.select({ id: schools.id }).from(schools).where(eq(schools.id, session.schoolId)).limit(1)
-  if (school.length === 0) return null
+  // Verify company still exists
+  const company = await db.select({ id: companies.id }).from(companies).where(eq(companies.id, session.companyId)).limit(1)
+  if (company.length === 0) return null
 
   return session
 }
@@ -63,14 +63,14 @@ export async function requireAuth(): Promise<SessionData> {
 export async function requireVerifiedAuth(): Promise<SessionData> {
   const session = await requireAuth()
 
-  // Check if the school is verified
-  const [school] = await db
-    .select({ verified: schools.verified })
-    .from(schools)
-    .where(eq(schools.id, session.schoolId))
+  // Check if the company is verified
+  const [company] = await db
+    .select({ verified: companies.verified })
+    .from(companies)
+    .where(eq(companies.id, session.companyId))
     .limit(1)
 
-  if (!school || !school.verified) {
+  if (!company || !company.verified) {
     throw new Error('Email verification required')
   }
 
@@ -116,10 +116,10 @@ export async function verifyEmailToken(token: string): Promise<string | null> {
   // Delete the token after use
   await db.delete(emailVerificationTokens).where(eq(emailVerificationTokens.token, token))
 
-  // Mark the school as verified
-  await db.update(schools)
+  // Mark the company as verified
+  await db.update(companies)
     .set({ verified: true, updatedAt: new Date() })
-    .where(eq(schools.email, tokenRecord.email))
+    .where(eq(companies.email, tokenRecord.email))
 
   return tokenRecord.email
 }

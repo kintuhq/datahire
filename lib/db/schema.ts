@@ -1,6 +1,6 @@
 import { pgTable, text, timestamp, uuid, boolean, serial } from 'drizzle-orm/pg-core'
 
-export const schools = pgTable('schools', {
+export const companies = pgTable('companies', {
   id: uuid('id').defaultRandom().primaryKey(),
   email: text('email').notNull().unique(),
   password: text('password').notNull(),
@@ -16,17 +16,17 @@ export const schools = pgTable('schools', {
 export const jobs = pgTable('jobs', {
   id: uuid('id').defaultRandom().primaryKey(),
   shortId: text('short_id').notNull().unique(),
-  schoolId: uuid('school_id').references(() => schools.id, { onDelete: 'cascade' }).notNull(),
+  companyId: uuid('company_id').references(() => companies.id, { onDelete: 'cascade' }).notNull(),
   title: text('title').notNull(),
   location: text('location').notNull(),
   type: text('type').notNull(), // 'full-time', 'part-time'
   shortBio: text('short_bio').notNull(),
   jobSpec: text('job_spec').notNull(),
-  aboutSchool: text('about_school').notNull(),
+  aboutCompany: text('about_company').notNull(),
   howToApply: text('how_to_apply').notNull(),
-  schoolName: text('school_name'),
-  schoolUrl: text('school_url'),
-  schoolLogo: text('school_logo'),
+  companyName: text('company_name'),
+  companyUrl: text('company_url'),
+  companyLogo: text('company_logo'),
   published: boolean('published').default(true),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),
@@ -57,8 +57,8 @@ export const newsletterSubscribers = pgTable('newsletter_subscribers', {
   updatedAt: timestamp('updated_at').defaultNow(),
 })
 
-export type School = typeof schools.$inferSelect
-export type NewSchool = typeof schools.$inferInsert
+export type Company = typeof companies.$inferSelect
+export type NewCompany = typeof companies.$inferInsert
 export type Job = typeof jobs.$inferSelect
 export type NewJob = typeof jobs.$inferInsert
 export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect

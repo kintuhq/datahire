@@ -4,41 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match Frizzle design with cream background and orange/red accents */
-  /* Updated background color to #fef8ed */
+  /* Updated color tokens for DataHire with blue and grey tech theme */
   --background: white;
   --foreground: oklch(0.25 0 0); /* Dark gray text */
   --card: oklch(1 0 0); /* White cards */
   --card-foreground: oklch(0.25 0 0); /* Dark gray card text */
   --popover: oklch(1 0 0); /* White popovers */
   --popover-foreground: oklch(0.25 0 0); /* Dark gray popover text */
-  --primary: oklch(0.65 0.15 45); /* Orange primary */
+  --primary: oklch(0.55 0.25 250); /* Blue primary */
   --primary-foreground: oklch(1 0 0); /* White text on primary */
-  --secondary: oklch(0.6 0.2 45); /* Orange secondary */
+  --secondary: oklch(0.6 0.2 250); /* Blue secondary */
   --secondary-foreground: oklch(1 0 0); /* White text on secondary */
-  --muted: oklch(0.96 0.01 85); /* Light cream muted */
+  --muted: oklch(0.96 0.01 240); /* Light blue-grey muted */
   --muted-foreground: oklch(0.45 0 0); /* Medium gray muted text */
-  --accent: oklch(0.6 0.2 45); /* Orange accent */
+  --accent: oklch(0.6 0.2 250); /* Blue accent */
   --accent-foreground: oklch(1 0 0); /* White text on accent */
-  --destructive: oklch(0.55 0.25 45); /* Orange destructive */
+  --destructive: oklch(0.55 0.25 10); /* Red destructive */
   --destructive-foreground: oklch(1 0 0); /* White text on destructive */
-  --border: oklch(0.9 0.01 85); /* Light cream border */
+  --border: oklch(0.9 0.01 240); /* Light grey border */
   --input: oklch(1 0 0); /* White input */
-  --ring: oklch(0.65 0.15 45); /* Orange focus ring */
-  --chart-1: oklch(0.7 0.15 60);
-  --chart-2: oklch(0.65 0.2 25);
-  --chart-3: oklch(0.6 0.15 200);
-  --chart-4: oklch(0.7 0.2 120);
-  --chart-5: oklch(0.65 0.18 280);
+  --ring: oklch(0.55 0.25 250); /* Blue focus ring */
+  --chart-1: oklch(0.7 0.15 250);
+  --chart-2: oklch(0.65 0.2 240);
+  --chart-3: oklch(0.6 0.15 260);
+  --chart-4: oklch(0.7 0.2 230);
+  --chart-5: oklch(0.65 0.18 270);
   --radius: 0.5rem;
   --sidebar: oklch(1 0 0);
   --sidebar-foreground: oklch(0.25 0 0);
-  --sidebar-primary: oklch(0.98 0.02 85);
+  --sidebar-primary: oklch(0.98 0.02 240);
   --sidebar-primary-foreground: oklch(0.25 0 0);
-  --sidebar-accent: oklch(0.6 0.2 45);
+  --sidebar-accent: oklch(0.6 0.2 250);
   --sidebar-accent-foreground: oklch(1 0 0);
-  --sidebar-border: oklch(0.9 0.01 85);
-  --sidebar-ring: oklch(0.65 0.15 45);
+  --sidebar-border: oklch(0.9 0.01 240);
+  --sidebar-ring: oklch(0.55 0.25 250);
 }
 
 .dark {

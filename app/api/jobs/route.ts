@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { jobs, schools, newsletterSubscribers } from '@/lib/db/schema'
+import { jobs, companies, newsletterSubscribers } from '@/lib/db/schema'
 import { requireAuth, requireVerifiedAuth } from '@/lib/auth'
 import { sendJobNotificationEmail } from '@/lib/email'
 import { eq, desc } from 'drizzle-orm'
@@ -13,11 +13,11 @@ const jobSchema = z.object({
   type: z.enum(['full-time', 'part-time', 'private', 'contractor']),
   shortBio: z.string().min(1),
   jobSpec: z.string().min(1),
-  aboutSchool: z.string().min(1),
+  aboutCompany: z.string().min(1),
   howToApply: z.string().min(1),
-  schoolName: z.string().min(1).optional(),
-  schoolUrl: z.string().url().optional(),
-  schoolLogo: z.string().url().optional(),
+  companyName: z.string().min(1).optional(),
+  companyUrl: z.string().url().optional(),
+  companyLogo: z.string().url().optional(),
 })
 
 // GET /api/jobs - Get all published jobs
@@ -36,11 +36,11 @@ export async function GET(request: NextRequest) {
         location: jobs.location,
         type: jobs.type,
         createdAt: jobs.createdAt,
-        school: {
-          id: jobs.schoolId,
-          name: jobs.schoolName,
-          logo: jobs.schoolLogo,
-          url: jobs.schoolUrl,
+        company: {
+          id: jobs.companyId,
+          name: jobs.companyName,
+          logo: jobs.companyLogo,
+          url: jobs.companyUrl,
         },
       })
       .from(jobs)
@@ -93,25 +93,25 @@ export async function POST(request: NextRequest) {
     const [job] = await db.insert(jobs).values({
       ...jobData,
       shortId,
-      schoolId: session.schoolId,
+      companyId: session.companyId,
     }).returning()
 
-    // Get school info for email notifications
-    const [school] = await db
+    // Get company info for email notifications
+    const [company] = await db
       .select({
-        id: schools.id,
-        name: schools.name,
-        logo: schools.logo,
+        id: companies.id,
+        name: companies.name,
+        logo: companies.logo,
       })
-      .from(schools)
-      .where(eq(schools.id, session.schoolId))
+      .from(companies)
+      .where(eq(companies.id, session.companyId))
       .limit(1)
 
     // Send notifications to newsletter subscribers (async, non-blocking)
-    if (school) {
-      const jobWithSchool = {
+    if (company) {
+      const jobWithCompany = {
         ...job,
-        school: school
+        company: company
       }
 
       // Get all active newsletter subscribers
@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
       // Send emails asynchronously without blocking the response
       Promise.all(
         subscribers.map(subscriber =>
-          sendJobNotificationEmail(subscriber.email, subscriber.name, jobWithSchool)
+          sendJobNotificationEmail(subscriber.email, subscriber.name, jobWithCompany)
             .catch(error => console.error(`Failed to send notification to ${subscriber.email}:`, error))
         )
       ).catch(error => console.error('Error sending job notifications:', error))

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { schools } from '@/lib/db/schema'
+import { companies } from '@/lib/db/schema'
 import { hashPassword, createToken, createEmailVerificationToken } from '@/lib/auth'
 import { sendEmailVerificationEmail } from '@/lib/email'
 import { rateLimit, rateLimitConfigs } from '@/lib/rate-limit'
@@ -34,15 +34,15 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { email, password } = registerSchema.parse(body)
 
-    // Check if school already exists
-    const existingSchool = await db.select().from(schools).where(eq(schools.email, email)).limit(1)
-    if (existingSchool.length > 0) {
-      return NextResponse.json({ error: 'School already exists' }, { status: 400 })
+    // Check if company already exists
+    const existingCompany = await db.select().from(companies).where(eq(companies.email, email)).limit(1)
+    if (existingCompany.length > 0) {
+      return NextResponse.json({ error: 'Company already exists' }, { status: 400 })
     }
 
-    // Create school
+    // Create company
     const hashedPassword = await hashPassword(password)
-    const [school] = await db.insert(schools).values({
+    const [company] = await db.insert(companies).values({
       email,
       password: hashedPassword,
     }).returning()
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
     try {
       const verificationToken = await createEmailVerificationToken(email)
       const protocol = request.headers.get('x-forwarded-proto') || 'https'
-      const host = request.headers.get('host') || 'mathjobs.xyz'
+      const host = request.headers.get('host') || 'datahire.co'
       const baseUrl = `${protocol}://${host}`
       await sendEmailVerificationEmail(email, verificationToken, baseUrl)
     } catch (error) {
@@ -59,11 +59,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Create session token
-    const token = createToken({ schoolId: school.id, email: school.email })
+    const token = createToken({ companyId: company.id, email: company.email })
 
     const response = NextResponse.json({
       success: true,
-      school: { id: school.id, email: school.email, name: school.name }
+      company: { id: company.id, email: company.email, name: company.name }
     })
 
     response.cookies.set('auth-token', token, {

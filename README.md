@@ -1,22 +1,22 @@
-# MathJobs - Math Teaching Job Board
+# DataHire - Data Analyst Job Board
 
-A modern job board platform connecting math teachers with schools and universities worldwide. Built with Next.js 14, featuring free job postings for institutions and unlimited applications for teachers.
+A modern job board platform connecting data analysts with companies worldwide. Built with Next.js 14, featuring free job postings for companies and unlimited applications for data analysts.
 
 ## 🚀 Features
 
-### For Schools & Universities
+### For Companies
 - **Free account creation** and job posting
 - **Professional dashboard** to manage job postings
 - **Logo upload** with Cloudflare R2 storage
 - **Rich job descriptions** with full specifications
-- **Authentication** with secure sessions
+- **Authentication** with NextAuth
 - **Email notifications** via Resend
 
-### For Math Teachers
+### For Data Analysts
 - **Browse jobs** without creating an account
 - **Newsletter subscription** for new job notifications
 - **Detailed job pages** with full specifications
-- **Easy application process** with school contact info
+- **Easy application process** with company contact info
 - **Email alerts** when new positions are posted
 
 ### Technical Features
@@ -31,7 +31,7 @@ A modern job board platform connecting math teachers with schools and universiti
 
 - **Framework**: Next.js 14 (App Router)
 - **Database**: Neon PostgreSQL with Drizzle ORM
-- **Authentication**: JWT with secure HTTP-only cookies
+- **Authentication**: NextAuth with secure sessions
 - **File Storage**: Cloudflare R2
 - **Email**: Resend
 - **UI**: Tailwind CSS + shadcn/ui
@@ -67,24 +67,24 @@ A modern job board platform connecting math teachers with schools and universiti
 
 ## 🗃 Database Schema
 
-### Schools Table
+### Companies Table
 - **id**: UUID primary key
 - **email**: Unique email address
 - **password**: Hashed password
-- **name**: School/institution name
+- **name**: Company name
 - **logo**: Optional logo URL
 - **verified**: Email verification status
 - **timestamps**: Created/updated dates
 
 ### Jobs Table
 - **id**: UUID primary key
-- **schoolId**: Foreign key to schools
+- **companyId**: Foreign key to companies
 - **title**: Job title
 - **location**: City and country
 - **type**: full-time or part-time
 - **shortBio**: Brief description for job cards
 - **jobSpec**: Detailed job requirements
-- **aboutSchool**: Information about the school
+- **aboutCompany**: Information about the company
 - **howToApply**: Application instructions
 - **published**: Publication status
 - **timestamps**: Created/updated dates
@@ -111,13 +111,13 @@ Create `.env.local` with:
 ```env
 DATABASE_URL=your_neon_database_url
 RESEND_API_KEY=your_resend_api_key
-EMAIL_FROM_ADDRESS=team@updates.mathjobs.xyz
+EMAIL_FROM_ADDRESS=team@updates.datahire.co
 R2_ENDPOINT=your_r2_endpoint
 R2_PUBLIC_URL=your_r2_public_url
 R2_ACCESS_KEY_ID=your_r2_access_key
 R2_SECRET_ACCESS_KEY=your_r2_secret_key
 JWT_SECRET=your_jwt_secret
-NEXT_PUBLIC_BASE_URL=https://mathjobs.xyz
+NEXT_PUBLIC_BASE_URL=https://datahire.co
 ```
 
 ### Installation & Setup
@@ -138,25 +138,25 @@ npm run dev
 
 ## 📱 Usage
 
-### For Schools
+### For Companies
 1. Visit the homepage and click "Post a Job"
-2. Create an account with school email and details
+2. Create an account with company email and details
 3. Access the dashboard to manage job postings
-4. Upload school logo for branding
+4. Upload company logo for branding
 5. Create detailed job postings with rich descriptions
 
-### For Teachers
+### For Data Analysts
 1. Browse jobs on the homepage
 2. Subscribe to newsletter for new job notifications
 3. Click "View Details" to see full job specifications
-4. Follow the application instructions provided by each school
+4. Follow the application instructions provided by each company
 5. Receive email alerts when new positions are posted
 
 ## 🌐 API Endpoints
 
 ### Authentication
-- `POST /api/auth/register` - School registration
-- `POST /api/auth/login` - School login
+- `POST /api/auth/register` - Company registration
+- `POST /api/auth/login` - Company login
 - `POST /api/auth/logout` - Logout
 
 ### Jobs
@@ -167,10 +167,10 @@ npm run dev
 - `DELETE /api/jobs/[id]` - Delete job (authenticated)
 
 ### Dashboard
-- `GET /api/dashboard/jobs` - Get school's jobs and profile
+- `GET /api/dashboard/jobs` - Get company's jobs and profile
 
-### School Profile
-- `PUT /api/school/logo` - Update school logo
+### Company Profile
+- `PUT /api/company/logo` - Update company logo
 
 ### File Upload
 - `POST /api/upload` - Get signed upload URL for R2
@@ -207,7 +207,7 @@ The application is ready for deployment on Vercel:
 
 ## 📧 Email Features
 
-- **Welcome emails** for new school registrations
+- **Welcome emails** for new company registrations
 - **Newsletter subscriptions** with welcome emails
 - **Job notification emails** sent to subscribers automatically
 - **Password reset** emails (framework in place)
@@ -232,4 +232,4 @@ npm run db:migrate   # Run migrations
 
 ---
 
-**MathJobs** - Connecting passionate math educators with schools worldwide. 🧮📚
+**DataHire** - Connecting talented data analysts with companies worldwide. 📊💼

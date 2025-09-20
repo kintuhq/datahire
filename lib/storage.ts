@@ -10,11 +10,11 @@ const s3Client = new S3Client({
   },
 })
 
-const BUCKET_NAME = 'mathjobs'
+const BUCKET_NAME = 'datahire'
 
-export async function uploadLogo(file: File, schoolId: string): Promise<string> {
+export async function uploadLogo(file: File, companyId: string): Promise<string> {
   const fileExtension = file.name.split('.').pop()
-  const fileName = `logos/${schoolId}.${fileExtension}`
+  const fileName = `logos/${companyId}.${fileExtension}`
 
   const command = new PutObjectCommand({
     Bucket: BUCKET_NAME,
@@ -41,12 +41,12 @@ export async function deleteLogo(logoUrl: string): Promise<void> {
   await s3Client.send(command)
 }
 
-export async function getUploadUrl(schoolId: string, fileType: string, jobId?: string): Promise<{ uploadUrl: string; fileUrl: string }> {
+export async function getUploadUrl(companyId: string, fileType: string, jobId?: string): Promise<{ uploadUrl: string; fileUrl: string }> {
   const fileExtension = fileType.split('/')[1]
-  // Use job-specific filename if jobId is provided, otherwise use school-based filename
+  // Use job-specific filename if jobId is provided, otherwise use company-based filename
   const fileName = jobId
     ? `logos/job-${jobId}.${fileExtension}`
-    : `logos/${schoolId}.${fileExtension}`
+    : `logos/${companyId}.${fileExtension}`
 
   const command = new PutObjectCommand({
     Bucket: BUCKET_NAME,

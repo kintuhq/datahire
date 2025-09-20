@@ -68,7 +68,7 @@ export default function HomePage() {
       })
 
       if (response.ok) {
-        setSubscriptionMessage("Thanks! You'll receive notifications about new math teaching positions.")
+        setSubscriptionMessage("Thanks! You'll receive notifications about new data analyst positions.")
         setEmail("")
         setShowEmailInput(false)
       } else {
@@ -91,7 +91,7 @@ export default function HomePage() {
             <div className="flex items-center">
               <Image
                 src="/logo.png"
-                alt="Math Jobs logo"
+                alt="DataHire logo"
                 width={56}
                 height={56}
                 className="h-14 w-14 mr-2"
@@ -99,14 +99,14 @@ export default function HomePage() {
               />
               <div>
                 <h1 className="text-2xl font-bold">
-                  <span className="text-black">Math</span> <span className="text-orange-500">Jobs</span>
+                  <span className="text-black">Data</span> <span className="text-blue-600">Hire</span>
                 </h1>
-                <p className="text-muted-foreground -mt-1 text-sm">Global math jobs</p>
+                <p className="text-muted-foreground -mt-1 text-sm">Data Analyst Jobs</p>
               </div>
             </div>
             <Button
               onClick={() => router.push("/register")}
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-semibold text-white bg-gradient-to-r from-red-500 to-amber-500 rounded-lg shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-300 px-6 py-3 h-11 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-300 px-6 py-3 h-11 cursor-pointer"
             >
               Post a Job
             </Button>
@@ -118,11 +118,11 @@ export default function HomePage() {
       <section className="py-16 px-4">
         <div className="mx-auto text-center" style={{ maxWidth: "1240px" }}>
           <h2 className="text-5xl font-bold text-foreground mb-4 text-balance">
-            Free Job Board For <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Math</span> Teachers
+            Free Job Board For <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Data</span> Analysts
           </h2>
           <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto text-pretty">
-            Connect with schools and universities worldwide through MathJobs. Free job postings for institutions, free
-            applications for teachers.
+            Connect with companies worldwide through DataHire. Free job postings for companies, free
+            applications for data analysts.
           </p>
 
           {/* Newsletter Signup */}
@@ -134,7 +134,7 @@ export default function HomePage() {
                 width: '100%',
                 maxWidth: '400px',
                 border: '3px solid transparent',
-                backgroundImage: 'linear-gradient(white, white), linear-gradient(45deg, #f97316, #fb923c)',
+                backgroundImage: 'linear-gradient(white, white), linear-gradient(45deg, #2563eb, #3b82f6)',
                 backgroundOrigin: 'border-box',
                 backgroundClip: 'content-box, border-box',
                 display: 'flex',
@@ -158,7 +158,7 @@ export default function HomePage() {
                   >
                     <Mail className="w-4 h-4 text-gray-500 mr-3" />
                     <span className="text-gray-500 text-xs sm:text-sm font-medium">
-                      Get weekly email job alerts
+                      Get weekly data analyst job alerts
                     </span>
                   </div>
 
@@ -167,7 +167,7 @@ export default function HomePage() {
                     style={{
                       width: '96px',
                       height: '100%',
-                      background: 'linear-gradient(45deg, #f97316, #fb923c)',
+                      background: 'linear-gradient(45deg, #2563eb, #3b82f6)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -231,7 +231,7 @@ export default function HomePage() {
                     style={{
                       width: '96px',
                       height: '100%',
-                      background: 'linear-gradient(45deg, #f97316, #fb923c)',
+                      background: 'linear-gradient(45deg, #2563eb, #3b82f6)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -344,7 +344,7 @@ export default function HomePage() {
                       <div className="flex items-center gap-2">
                         <Badge
                           variant="outline"
-                          className="bg-white hover:bg-orange-50"
+                          className="bg-white hover:bg-blue-50"
                           style={{ borderColor: 'var(--primary)', color: 'var(--primary)' }}
                         >
                           {job.type === "full-time" ? "Full-time" : "Part-time"}
@@ -352,11 +352,11 @@ export default function HomePage() {
                       </div>
 
                       <p className="text-sm text-muted-foreground line-clamp-2">
-                        Seeking qualified math educator for this position.
+                        Seeking qualified data analyst for this position.
                       </p>
 
                       <Button
-                        className="w-full bg-orange-500 hover:bg-orange-600 text-white cursor-pointer"
+                        className="w-full bg-blue-600 hover:bg-blue-700 text-white cursor-pointer"
                         size="sm"
                         onClick={() => router.push(`/jobs/${job.shortId}`)}
                       >
@@ -372,7 +372,7 @@ export default function HomePage() {
           {!isLoading && jobs.length === 0 && (
             <div className="text-center py-12">
               <p className="text-muted-foreground text-lg">No job opportunities available yet.</p>
-              <p className="text-muted-foreground">Subscribe above to get notified when new positions are posted!</p>
+              <p className="text-muted-foreground">Subscribe above to get notified when new data analyst positions are posted!</p>
             </div>
           )}
         </div>
@@ -387,24 +387,24 @@ export default function HomePage() {
               <div className="flex items-center mb-3">
                 <Image
                   src="/logo.png"
-                  alt="MathJobs Logo"
+                  alt="DataHire Logo"
                   width={32}
                   height={32}
                   className="h-8 w-8 mr-2"
                   loading="lazy"
                 />
                 <h3 className="text-2xl font-bold text-foreground">
-                  Math <span className="text-primary">Jobs</span>
+                  Data <span className="text-primary">Hire</span>
                 </h3>
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
-                The global platform connecting passionate math educators with schools and universities worldwide.
+                The global platform connecting talented data analysts with companies worldwide.
               </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">For Teachers</h4>
+              <h4 className="font-semibold text-foreground mb-3">For Analysts</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
@@ -418,7 +418,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
-                    Teaching Tips
+                    Data Analysis Tips
                   </a>
                 </li>
               </ul>
@@ -426,7 +426,7 @@ export default function HomePage() {
 
             {/* For Schools */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">For Schools</h4>
+              <h4 className="font-semibold text-foreground mb-3">For Companies</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="/login" className="hover:text-primary transition-colors">
@@ -472,7 +472,7 @@ export default function HomePage() {
           {/* Bottom Section */}
           <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2025 Math Jobs.
+              © 2025 DataHire.
             </div>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">

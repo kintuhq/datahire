@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { jobs, schools } from '@/lib/db/schema'
+import { jobs, companies } from '@/lib/db/schema'
 import { requireAuth } from '@/lib/auth'
 import { eq, desc } from 'drizzle-orm'
 
@@ -8,30 +8,30 @@ export async function GET() {
   try {
     const session = await requireAuth()
 
-    // Get school info
-    const [school] = await db
+    // Get company info
+    const [company] = await db
       .select({
-        id: schools.id,
-        name: schools.name,
-        email: schools.email,
-        bio: schools.bio,
-        logo: schools.logo,
-        verified: schools.verified,
+        id: companies.id,
+        name: companies.name,
+        email: companies.email,
+        bio: companies.bio,
+        logo: companies.logo,
+        verified: companies.verified,
       })
-      .from(schools)
-      .where(eq(schools.id, session.schoolId))
+      .from(companies)
+      .where(eq(companies.id, session.companyId))
       .limit(1)
 
-    // Get school's jobs
-    const schoolJobs = await db
+    // Get company's jobs
+    const companyJobs = await db
       .select()
       .from(jobs)
-      .where(eq(jobs.schoolId, session.schoolId))
+      .where(eq(jobs.companyId, session.companyId))
       .orderBy(desc(jobs.createdAt))
 
     return NextResponse.json({
-      school,
-      jobs: schoolJobs,
+      company,
+      jobs: companyJobs,
     })
   } catch (error) {
     console.error('Error fetching dashboard data:', error)

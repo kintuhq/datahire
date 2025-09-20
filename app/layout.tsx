@@ -7,23 +7,23 @@ import { Suspense } from "react"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "MathJobs - Worldwide Math Teaching Positions",
-  description: "Find your perfect math teaching position worldwide. Free job board for math teachers and schools.",
+  title: "DataHire - Data Analyst Jobs",
+  description: "Find your perfect data analyst position. Free job board for data analysts and companies.",
   generator: "v0.app",
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "MathJobs - Worldwide Math Teaching Positions",
-    description: "Find your perfect math teaching position worldwide. Free job board for math teachers and schools.",
-    url: "https://mathjobs.xyz",
-    siteName: "MathJobs",
+    title: "DataHire - Data Analyst Jobs",
+    description: "Find your perfect data analyst position. Free job board for data analysts and companies.",
+    url: "https://datahire.co",
+    siteName: "DataHire",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "MathJobs - Worldwide Math Teaching Positions",
+        alt: "DataHire - Data Analyst Jobs",
       },
     ],
     locale: "en_US",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MathJobs - Worldwide Math Teaching Positions",
-    description: "Find your perfect math teaching position worldwide. Free job board for math teachers and schools.",
+    title: "DataHire - Data Analyst Jobs",
+    description: "Find your perfect data analyst position. Free job board for data analysts and companies.",
     images: ["/og.png"],
   },
 }
