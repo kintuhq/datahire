@@ -59,7 +59,7 @@ export default function LoginPage() {
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">Sign in to your account</CardTitle>
-            <CardDescription>
+            <CardDescription className="mb-4">
               Enter your credentials to access your job posting dashboard
             </CardDescription>
           </CardHeader>
