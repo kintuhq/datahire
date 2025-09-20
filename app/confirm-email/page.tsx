@@ -24,7 +24,7 @@ export default function ConfirmEmailPage() {
         <Card>
           <CardHeader className="text-center">
             <div className="mb-4">
-              <Mail className="w-16 h-16 mx-auto text-orange-500" />
+              <Mail className="w-16 h-16 mx-auto text-blue-600" />
             </div>
             <CardTitle className="text-2xl">Check your email</CardTitle>
             <CardDescription>
@@ -32,14 +32,14 @@ export default function ConfirmEmailPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center space-y-4">
-            <div className="py-4">
-              <p className="text-muted-foreground mb-4">
+            <div className="py-2">
+              <p className="text-muted-foreground mb-2">
                 Please check your email and click the verification link to activate your account.
                 You'll need to verify your email before you can sign in to your dashboard.
               </p>
             </div>
 
-            <div className="space-y-3 pt-4">
+            <div className="space-y-3 pt-2">
               <Button
                 asChild
                 variant="outline"

@@ -264,9 +264,9 @@ export default function HomePage() {
           {/* Powered by Fizzle */}
           <div className="flex items-center justify-center gap-2 mt-6 pt-4">
             <span className="text-xs text-muted-foreground">From:</span>
-            <a href="https://www.frizzle.com/?utm_source=mathjobs" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.example.com/?utm_source=mathjobs" target="_blank" rel="noopener noreferrer">
               <Image
-                src="/fizzle.png"
+                src="/company.png"
                 alt="Fizzle"
                 width={64}
                 height={64}

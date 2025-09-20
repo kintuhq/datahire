@@ -72,7 +72,7 @@ export default function RegisterPage() {
           <Card>
             <CardHeader className="text-center">
               <CardTitle className="text-2xl">Create an account</CardTitle>
-              <CardDescription>
+              <CardDescription className="mb-4">
                 Join DataHire to start posting data analyst positions
               </CardDescription>
             </CardHeader>
