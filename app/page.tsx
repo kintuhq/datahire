@@ -16,7 +16,7 @@ interface Job {
   location: string
   type: string
   createdAt: string
-  school: {
+  company: {
     id: string
     name: string
     logo?: string
@@ -318,18 +318,18 @@ export default function HomePage() {
                     <div className="flex items-start gap-3">
                       <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
                         <Image
-                          src={job.school.logo || "/placeholder.svg"}
-                          alt={`${job.school.name} logo`}
+                          src={job.company.logo || "/placeholder.svg"}
+                          alt={`${job.company.name} logo`}
                           width={48}
                           height={48}
                           className="w-full h-full object-cover"
                           loading="lazy"
-                          unoptimized={job.school.logo?.startsWith('http')}
+                          unoptimized={job.company.logo?.startsWith('http')}
                         />
                       </div>
                       <div className="flex-1 min-w-0">
                         <CardTitle className="text-lg font-bold text-card-foreground line-clamp-2">{job.title}</CardTitle>
-                        <CardDescription className="text-muted-foreground">{job.school.name}</CardDescription>
+                        <CardDescription className="text-muted-foreground">{job.company.name}</CardDescription>
                       </div>
                     </div>
                   </CardHeader>

@@ -248,25 +248,6 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
     setCompanyData((prev) => ({ ...prev, [field]: value }))
   }
 
-  const handleSchoolChange = (field: string, value: string) => {
-    setSchoolData((prev) => ({ ...prev, [field]: value }))
-  }
-
-  const handleSchoolUpdate = async () => {
-    try {
-      const response = await fetch("/api/school/profile", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(schoolData),
-      })
-
-      if (!response.ok) {
-        throw new Error("Failed to update school profile")
-      }
-    } catch (error) {
-      console.error("Error updating school profile:", error)
-    }
-  }
 
   const handleLogoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -435,7 +416,7 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
             <form onSubmit={handleSubmit} className="space-y-10">
             <div className="space-y-2">
               <Label htmlFor="title" className="text-xl font-semibold">Job Title *</Label>
-              <p className="text-sm text-gray-400 -mt-1 mb-2">e.g. High School Math Teacher</p>
+              <p className="text-sm text-gray-400 -mt-1 mb-2">e.g. Senior Data Analyst</p>
               <div className="w-full md:w-1/2">
                 <Input
                   id="title"

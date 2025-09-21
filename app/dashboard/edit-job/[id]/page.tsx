@@ -13,12 +13,12 @@ interface Job {
   type: string
   shortBio: string
   jobSpec: string
-  aboutSchool: string
+  aboutCompany: string
   howToApply: string
   published: boolean
   createdAt: string
   updatedAt: string
-  school: {
+  company: {
     id: string
     name: string
     logo: string
@@ -122,16 +122,16 @@ export default function EditJobPage() {
             <div className="flex items-center">
               <img
                 src="/logo.png"
-                alt="Math Jobs logo"
+                alt="DataHire logo"
                 className="h-14 w-14 mr-2"
               />
               <div>
                 <a href="/" className="cursor-pointer">
                   <h1 className="text-2xl font-bold">
-                    <span className="text-black">Math</span> <span className="text-orange-500">Jobs</span>
+                    <span className="text-black">Data</span> <span className="text-blue-600">Hire</span>
                   </h1>
                 </a>
-                <p className="text-muted-foreground -mt-1 text-sm">Global math jobs</p>
+                <p className="text-muted-foreground -mt-1 text-sm">Data Analyst Jobs</p>
               </div>
             </div>
             <div className="flex items-center gap-4">

@@ -16,12 +16,12 @@ interface Job {
   type: string
   shortBio: string
   jobSpec: string
-  aboutSchool: string
+  aboutCompany: string
   howToApply: string
   published: boolean
   createdAt: string
   updatedAt: string
-  school: {
+  company: {
     id: string
     name: string
     logo?: string
@@ -48,7 +48,7 @@ export default function JobDetailPage() {
         setJob(jobData)
 
         // Update page title and meta description
-        document.title = `${jobData.title} at ${jobData.school.name} - MathJobs`
+        document.title = `${jobData.title} at ${jobData.company.name} - DataHire`
         const metaDescription = document.querySelector('meta[name="description"]')
         if (metaDescription) {
           metaDescription.setAttribute('content', jobData.shortBio)
@@ -101,16 +101,16 @@ export default function JobDetailPage() {
             <div className="flex items-center">
               <img
                 src="/logo.png"
-                alt="Math Jobs logo"
+                alt="DataHire logo"
                 className="h-14 w-14 mr-2"
               />
               <div>
                 <a href="/" className="cursor-pointer">
                   <h1 className="text-2xl font-bold">
-                    <span className="text-black">Math</span> <span className="text-orange-500">Jobs</span>
+                    <span className="text-black">Data</span> <span className="text-blue-600">Hire</span>
                   </h1>
                 </a>
-                <p className="text-muted-foreground -mt-1 text-sm">Global math jobs</p>
+                <p className="text-muted-foreground -mt-1 text-sm">Data Analyst Jobs</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -133,10 +133,10 @@ export default function JobDetailPage() {
           <div className="pb-6 border-b border-gray-200">
             <div className="flex items-start gap-6 mb-6">
               <div className="flex flex-col items-center">
-                {job.school.logo && (
+                {job.company.logo && (
                   <img
-                    src={job.school.logo}
-                    alt={`${job.school.name} logo`}
+                    src={job.company.logo}
+                    alt={`${job.company.name} logo`}
                     className="w-20 h-20 rounded-xl object-cover border border-border mb-3"
                   />
                 )}
@@ -149,18 +149,18 @@ export default function JobDetailPage() {
               </div>
               <div className="flex-1">
                 <h1 className="text-3xl font-bold text-foreground mb-2">{job.title}</h1>
-                {job.school.url ? (
+                {job.company.url ? (
                   <a
-                    href={job.school.url}
+                    href={job.company.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xl text-orange-600 hover:text-orange-700 hover:underline mb-4 inline-flex items-center gap-1"
                   >
-                    {job.school.name}
+                    {job.company.name}
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 ) : (
-                  <h2 className="text-xl text-muted-foreground mb-4">{job.school.name}</h2>
+                  <h2 className="text-xl text-muted-foreground mb-4">{job.company.name}</h2>
                 )}
                 <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-1">
@@ -187,14 +187,14 @@ export default function JobDetailPage() {
             </div>
           </div>
 
-          {/* About the School */}
+          {/* About the Company */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Building2 className="w-5 h-5 text-orange-600" />
               <h3 className="text-xl font-semibold">About</h3>
             </div>
             <div className="prose prose-sm max-w-none">
-              <p className="whitespace-pre-wrap text-foreground leading-relaxed">{job.aboutSchool}</p>
+              <p className="whitespace-pre-wrap text-foreground leading-relaxed">{job.aboutCompany}</p>
             </div>
           </div>
 
@@ -254,7 +254,7 @@ export default function JobDetailPage() {
                 size="sm"
                 className="cursor-pointer"
                 onClick={() => {
-                  const text = `${job.title} at ${job.school.name} - ${window.location.href}`
+                  const text = `${job.title} at ${job.company.name} - ${window.location.href}`
                   window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank')
                 }}
               >
@@ -274,15 +274,15 @@ export default function JobDetailPage() {
               <div className="flex items-center mb-3">
                 <img
                   src="/logo.png"
-                  alt="MathJobs Logo"
+                  alt="DataHire Logo"
                   className="h-8 w-8 mr-2"
                 />
                 <h3 className="text-2xl font-bold text-foreground">
-                  Math <span className="text-primary">Jobs</span>
+                  Data <span className="text-primary">Hire</span>
                 </h3>
               </div>
               <p className="text-muted-foreground mb-4 max-w-md">
-                The global platform connecting passionate math educators with schools and universities worldwide.
+                The global platform connecting talented data analysts with companies worldwide.
               </p>
             </div>
 
@@ -308,9 +308,9 @@ export default function JobDetailPage() {
               </ul>
             </div>
 
-            {/* For Schools */}
+            {/* For Companies */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">For Schools</h4>
+              <h4 className="font-semibold text-foreground mb-3">For Companies</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="/dashboard" className="hover:text-primary transition-colors">
@@ -356,7 +356,7 @@ export default function JobDetailPage() {
           {/* Bottom Section */}
           <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-muted-foreground mb-4 md:mb-0">
-              © 2025 Math Jobs.
+              © 2025 Data Hire.
             </div>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <a href="#" className="hover:text-primary transition-colors">
