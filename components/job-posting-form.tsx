@@ -675,7 +675,6 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
                         className="w-20 h-20 rounded-lg object-cover mx-auto mb-3"
                         onLoad={() => console.log('Image loaded successfully:', logoState.currentLogo)}
                         onError={(e) => console.error('Image failed to load:', logoState.currentLogo, e)}
-                        crossOrigin="anonymous"
                       />
                       <p className="text-sm text-gray-600 mb-2">Logo uploaded successfully!</p>
                       <label htmlFor="logo-upload-input" className="inline-block">
