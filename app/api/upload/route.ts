@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { fileType, fileSize, jobId } = uploadSchema.parse(body)
 
-    const { uploadUrl, fileUrl } = await getUploadUrl(session.schoolId, fileType, jobId)
+    const { uploadUrl, fileUrl } = await getUploadUrl(session.companyId, fileType, jobId)
 
     return NextResponse.json({
       uploadUrl,
