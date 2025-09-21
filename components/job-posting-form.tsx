@@ -243,6 +243,10 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
+  const handleCompanyChange = (field: string, value: string) => {
+    setCompanyData((prev) => ({ ...prev, [field]: value }))
+  }
+
   const handleSchoolChange = (field: string, value: string) => {
     setSchoolData((prev) => ({ ...prev, [field]: value }))
   }
@@ -467,7 +471,6 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
                 <SelectContent>
                   <SelectItem value="full-time">Full-time</SelectItem>
                   <SelectItem value="part-time">Part-time</SelectItem>
-                  <SelectItem value="private">Private</SelectItem>
                   <SelectItem value="contractor">Contractor</SelectItem>
                 </SelectContent>
               </Select>

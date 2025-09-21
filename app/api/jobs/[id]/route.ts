@@ -9,7 +9,7 @@ import { isValidShortId } from '@/lib/short-id'
 const jobUpdateSchema = z.object({
   title: z.string().min(1).optional(),
   location: z.string().min(1).optional(),
-  type: z.enum(['full-time', 'part-time', 'private', 'contractor']).optional(),
+  type: z.enum(['full-time', 'part-time', 'contractor']).optional(),
   shortBio: z.string().min(1).optional(),
   jobSpec: z.string().min(1).optional(),
   aboutCompany: z.string().min(1).optional(),
