@@ -363,11 +363,11 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
         throw new Error("Failed to upload file")
       }
 
-      // For editing jobs, we don't need to update the global school logo
+      // For editing jobs, we don't need to update the global company logo
       // The logo will be saved with the job when the form is submitted
-      // For new jobs, we still update the global school logo as a fallback
+      // For new jobs, we still update the global company logo as a fallback
       if (!editingJob) {
-        const updateResponse = await fetch("/api/school/logo", {
+        const updateResponse = await fetch("/api/company/logo", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ logoUrl: fileUrl }),
