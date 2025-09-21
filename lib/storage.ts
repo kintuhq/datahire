@@ -43,11 +43,20 @@ export async function deleteLogo(logoUrl: string): Promise<void> {
 }
 
 export async function getUploadUrl(companyId: string, fileType: string, jobId?: string): Promise<{ uploadUrl: string; fileUrl: string }> {
+  console.log('=== STORAGE: getUploadUrl called ===')
+  console.log('Inputs:', { companyId, fileType, jobId })
+  console.log('BUCKET_NAME:', BUCKET_NAME)
+  console.log('R2_PUBLIC_URL:', process.env.R2_PUBLIC_URL)
+
   const fileExtension = fileType.split('/')[1]
+  console.log('File extension:', fileExtension)
+
   // Use job-specific filename if jobId is provided, otherwise use company-based filename
   const fileName = jobId
     ? `logos/job-${jobId}.${fileExtension}`
     : `logos/${companyId}.${fileExtension}`
+
+  console.log('Generated filename:', fileName)
 
   const command = new PutObjectCommand({
     Bucket: BUCKET_NAME,
@@ -55,8 +64,32 @@ export async function getUploadUrl(companyId: string, fileType: string, jobId?: 
     ContentType: fileType,
   })
 
-  const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 })
-  const fileUrl = `${process.env.R2_PUBLIC_URL}/${fileName}`
+  console.log('PutObjectCommand created:', {
+    Bucket: BUCKET_NAME,
+    Key: fileName,
+    ContentType: fileType
+  })
 
-  return { uploadUrl, fileUrl }
+  try {
+    console.log('Generating signed URL...')
+    const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 })
+    console.log('Signed URL generated successfully')
+    console.log('Upload URL preview:', uploadUrl.substring(0, 100) + '...')
+
+    const fileUrl = `${process.env.R2_PUBLIC_URL}/${fileName}`
+    console.log('File URL:', fileUrl)
+
+    console.log('=== STORAGE: getUploadUrl SUCCESS ===')
+    return { uploadUrl, fileUrl }
+  } catch (error) {
+    console.error('=== STORAGE: getUploadUrl ERROR ===')
+    console.error('Error generating signed URL:', error)
+    console.error('S3Client config:', {
+      region: 'auto',
+      endpoint: process.env.R2_ENDPOINT,
+      forcePathStyle: true,
+      hasCredentials: !!(process.env.R2_ACCESS_KEY_ID && process.env.R2_SECRET_ACCESS_KEY)
+    })
+    throw error
+  }
 }

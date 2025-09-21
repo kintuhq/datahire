@@ -309,38 +309,26 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
     console.log('Starting upload process...')
 
     try {
-      // Get upload URL
-      const uploadBody: any = {
-        fileType: file.type,
-        fileSize: file.size
-      }
-      // If editing a job, include jobId for unique filename
-      if (editingJob) {
-        uploadBody.jobId = editingJob.id
-      }
+      // Upload file directly to our server
+      const formData = new FormData()
+      formData.append('file', file)
 
-      console.log('Requesting upload URL:', uploadBody)
+      console.log('Uploading file to server...')
 
       const uploadResponse = await fetch("/api/upload", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(uploadBody),
+        body: formData,
       })
 
-      console.log('Upload URL response status:', uploadResponse.status)
-
-      if (!uploadResponse.ok) {
-        const errorText = await uploadResponse.text()
-        console.error('Upload URL request failed:', {
-          status: uploadResponse.status,
-          statusText: uploadResponse.statusText,
-          response: errorText
-        })
-      }
+      console.log('Upload response status:', uploadResponse.status)
 
       if (!uploadResponse.ok) {
         const errorData = await uploadResponse.json().catch(() => ({}))
-        console.error('Upload URL error:', errorData)
+        console.error('Upload failed:', {
+          status: uploadResponse.status,
+          statusText: uploadResponse.statusText,
+          response: errorData
+        })
 
         // Always reset upload state on failure
         setLogoState(prev => ({ ...prev, isUploading: false }))
@@ -359,28 +347,8 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
         return
       }
 
-      const { uploadUrl, fileUrl } = await uploadResponse.json()
-      console.log('Got upload URLs:', { uploadUrl: !!uploadUrl, fileUrl })
-
-      // Upload file to R2
-      console.log('Uploading to R2...')
-      const uploadToR2 = await fetch(uploadUrl, {
-        method: "PUT",
-        headers: { "Content-Type": file.type },
-        body: file,
-      })
-
-      console.log('R2 upload response status:', uploadToR2.status)
-
-      if (!uploadToR2.ok) {
-        const errorText = await uploadToR2.text()
-        console.error('R2 upload failed:', {
-          status: uploadToR2.status,
-          statusText: uploadToR2.statusText,
-          response: errorText
-        })
-        throw new Error("Failed to upload file to R2")
-      }
+      const { fileUrl } = await uploadResponse.json()
+      console.log('Upload successful, file URL:', fileUrl)
 
       // For editing jobs, we don't need to update the global company logo
       // The logo will be saved with the job when the form is submitted
