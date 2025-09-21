@@ -72,10 +72,6 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
     }
   }, [editingJob])
 
-  // Debug logoState changes
-  useEffect(() => {
-    console.log('LogoState changed:', logoState)
-  }, [logoState])
 
   const fetchCompanyData = async () => {
     try {
