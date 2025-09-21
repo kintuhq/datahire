@@ -352,7 +352,7 @@ export default function HomePage() {
                       </div>
 
                       <p className="text-sm text-muted-foreground line-clamp-2">
-                        Seeking qualified data analyst for this position.
+                        {job.company.name} is hiring a {job.title} in {job.location}.
                       </p>
 
                       <Button

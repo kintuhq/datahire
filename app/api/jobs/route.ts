@@ -49,6 +49,7 @@ export async function GET(request: NextRequest) {
       .limit(limit)
       .offset(offset)
 
+
     const response = NextResponse.json(allJobs)
     // Add efficient caching - cache for 1 minute
     response.headers.set('Cache-Control', 'public, max-age=60, stale-while-revalidate=30')
