@@ -10,7 +10,7 @@ const s3Client = new S3Client({
   },
 })
 
-const BUCKET_NAME = 'datahire'
+const BUCKET_NAME = process.env.R2_BUCKET_NAME || 'datahire'
 
 export async function uploadLogo(file: File, companyId: string): Promise<string> {
   const fileExtension = file.name.split('.').pop()

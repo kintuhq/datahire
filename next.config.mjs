@@ -8,7 +8,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
-    domains: ['mathjobs.xyz', 'pub-66c0aa9041d54a6db13e5f38ab85e73e.r2.dev', 'pub-536cec96d6204af29abd07d788539f05.r2.dev'],
+    domains: ['mathjobs.xyz', 'pub-66c0aa9041d54a6db13e5f38ab85e73e.r2.dev', 'pub-536cec96d6204af29abd07d788539f05.r2.dev', 'images.datahire.co'],
   },
   async headers() {
     return [
