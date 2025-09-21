@@ -194,7 +194,7 @@ export default function DashboardPage() {
                         variant="ghost"
                         size="sm"
                         onClick={() => router.push(`/dashboard/edit-job/${job.id}`)}
-                        className="text-gray-600 cursor-pointer hover:!text-blue-500 h-8 w-8 p-0"
+                        className="text-gray-600 cursor-pointer hover:!bg-blue-500 hover:!text-white h-8 w-8 p-0"
                       >
                         <Edit className="w-4 h-4" />
                       </Button>
