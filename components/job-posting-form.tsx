@@ -330,6 +330,15 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
       console.log('Upload URL response status:', uploadResponse.status)
 
       if (!uploadResponse.ok) {
+        const errorText = await uploadResponse.text()
+        console.error('Upload URL request failed:', {
+          status: uploadResponse.status,
+          statusText: uploadResponse.statusText,
+          response: errorText
+        })
+      }
+
+      if (!uploadResponse.ok) {
         const errorData = await uploadResponse.json().catch(() => ({}))
         console.error('Upload URL error:', errorData)
 
@@ -364,8 +373,13 @@ export default function JobPostingForm({ onSubmit, onClose, editingJob, isModal 
       console.log('R2 upload response status:', uploadToR2.status)
 
       if (!uploadToR2.ok) {
-        console.error('R2 upload failed:', uploadToR2.status, uploadToR2.statusText)
-        throw new Error("Failed to upload file")
+        const errorText = await uploadToR2.text()
+        console.error('R2 upload failed:', {
+          status: uploadToR2.status,
+          statusText: uploadToR2.statusText,
+          response: errorText
+        })
+        throw new Error("Failed to upload file to R2")
       }
 
       // For editing jobs, we don't need to update the global company logo
