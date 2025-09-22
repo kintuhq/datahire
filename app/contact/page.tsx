@@ -128,7 +128,7 @@ export default function ContactPage() {
                 <h1 className="text-2xl font-bold">
                   <span className="text-black">Data</span> <span className="text-blue-600">Hire</span>
                 </h1>
-                <p className="text-muted-foreground -mt-1 text-sm">Global math jobs</p>
+                <p className="text-muted-foreground -mt-1 text-sm">Free job board for data analysts</p>
               </div>
             </div>
             <Button

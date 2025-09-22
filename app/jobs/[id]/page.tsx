@@ -288,7 +288,7 @@ export default function JobDetailPage() {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-foreground mb-3">For Teachers</h4>
+              <h4 className="font-semibold text-foreground mb-3">For Analysts</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <a href="/" className="hover:text-primary transition-colors">

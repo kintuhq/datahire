@@ -424,7 +424,7 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* For Schools */}
+            {/* For Companies */}
             <div>
               <h4 className="font-semibold text-foreground mb-3">For Companies</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
