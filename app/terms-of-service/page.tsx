@@ -1,7 +1,48 @@
+"use client"
+
+import { useRouter } from "next/navigation"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+
 export default function TermsOfServicePage() {
+  const router = useRouter()
+
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto px-4 py-12" style={{ maxWidth: "1240px" }}>
+      {/* Header */}
+      <header className="border-b border-border bg-card">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex items-center justify-between">
+            <div
+              className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200"
+              onClick={() => router.push("/")}
+            >
+              <Image
+                src="/logo.png"
+                alt="DataHire logo"
+                width={56}
+                height={56}
+                className="h-14 w-14 mr-2"
+                priority
+              />
+              <div>
+                <h1 className="text-2xl font-bold">
+                  <span className="text-black">Data</span> <span className="text-blue-600">Hire</span>
+                </h1>
+                <p className="text-muted-foreground -mt-1 text-sm">Data Analyst Jobs</p>
+              </div>
+            </div>
+            <Button
+              onClick={() => router.push("/register")}
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-300 px-6 py-3 h-11 cursor-pointer"
+            >
+              Post a Job
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <div className="max-w-2xl mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-foreground mb-6">Terms of Service</h1>
           <p className="text-muted-foreground mb-8">
@@ -193,6 +234,119 @@ export default function TermsOfServicePage() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-card border-t border-border mt-16">
+        <div className="mx-auto px-4 py-12" style={{ maxWidth: "1240px" }}>
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            {/* Brand Section */}
+            <div className="md:col-span-2">
+              <a href="/" className="inline-block">
+                <div className="flex items-center mb-3 hover:opacity-80 transition-opacity duration-200">
+                  <Image
+                    src="/logo.png"
+                    alt="DataHire Logo"
+                    width={32}
+                    height={32}
+                    className="h-8 w-8 mr-2"
+                    loading="lazy"
+                  />
+                  <h3 className="text-2xl font-bold text-foreground">
+                    Data <span className="text-primary">Hire</span>
+                  </h3>
+                </div>
+              </a>
+              <p className="text-muted-foreground mb-4 max-w-md">
+                The global platform connecting talented data analysts with companies worldwide.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-3">For Analysts</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    Browse Jobs
+                  </a>
+                </li>
+                <li>
+                  <a href="/career-resources" className="hover:text-primary transition-colors">
+                    Career Resources
+                  </a>
+                </li>
+                <li>
+                  <a href="/data-analysis-tips" className="hover:text-primary transition-colors">
+                    Data Analysis Tips
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* For Companies */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-3">For Companies</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <a href="/login" className="hover:text-primary transition-colors">
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a href="/hiring-guide" className="hover:text-primary transition-colors">
+                    Hiring Guide
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    Success Stories
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Connect With Us */}
+            <div>
+              <h4 className="font-semibold text-foreground mb-3">Connect With Us</h4>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-primary transition-colors">
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="hover:text-primary transition-colors">
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div className="text-sm text-muted-foreground mb-4 md:mb-0">
+              © 2025 Data Hire.
+            </div>
+            <div className="flex items-center gap-6 text-sm text-muted-foreground">
+              <a href="/privacy-policy" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </a>
+              <a href="/terms-of-service" className="hover:text-primary transition-colors">
+                Terms of Service
+              </a>
+              <a href="/contact" className="hover:text-primary transition-colors">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
