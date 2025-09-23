@@ -11,7 +11,10 @@ export default function Header() {
     <header className="border-b border-border bg-card">
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
+          <div
+            className="flex items-center cursor-pointer hover:opacity-80 transition-opacity duration-200"
+            onClick={() => router.push("/")}
+          >
             <Image
               src="/logo.png"
               alt="DataHire logo"

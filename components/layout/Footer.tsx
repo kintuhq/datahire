@@ -7,19 +7,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="md:col-span-2">
-            <div className="flex items-center mb-3">
-              <Image
-                src="/logo.png"
-                alt="DataHire Logo"
-                width={32}
-                height={32}
-                className="h-8 w-8 mr-2"
-                loading="lazy"
-              />
-              <h3 className="text-2xl font-bold text-foreground">
-                Data <span className="text-primary">Hire</span>
-              </h3>
-            </div>
+            <a href="/" className="inline-block">
+              <div className="flex items-center mb-3 hover:opacity-80 transition-opacity duration-200">
+                <Image
+                  src="/logo.png"
+                  alt="DataHire Logo"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 mr-2"
+                  loading="lazy"
+                />
+                <h3 className="text-2xl font-bold text-foreground">
+                  Data <span className="text-primary">Hire</span>
+                </h3>
+              </div>
+            </a>
             <p className="text-muted-foreground mb-4 max-w-md">
               The global platform connecting talented data analysts with companies worldwide.
             </p>
