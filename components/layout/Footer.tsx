@@ -35,12 +35,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="/career-resources" className="hover:text-primary transition-colors">
                   Career Resources
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="/data-analysis-tips" className="hover:text-primary transition-colors">
                   Data Analysis Tips
                 </a>
               </li>
@@ -57,7 +57,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-primary transition-colors">
+                <a href="/hiring-guide" className="hover:text-primary transition-colors">
                   Hiring Guide
                 </a>
               </li>
@@ -98,13 +98,13 @@ export default function Footer() {
             © 2025 Data Hire.
           </div>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="/privacy-policy" className="hover:text-primary transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="/terms-of-service" className="hover:text-primary transition-colors">
               Terms of Service
             </a>
-            <a href="#" className="hover:text-primary transition-colors">
+            <a href="/contact" className="hover:text-primary transition-colors">
               Contact Us
             </a>
           </div>
