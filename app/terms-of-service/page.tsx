@@ -51,14 +51,14 @@ export default function TermsOfServicePage() {
 
           <div className="prose prose-lg max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">1. Acceptance of Terms</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Acceptance of Terms</h2>
               <p className="text-muted-foreground">
                 By accessing and using Data Hire ("we," "our," or "us") and the datahire.co website (the "Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">2. Description of Service</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Description of Service</h2>
               <p className="text-muted-foreground mb-4">
                 Data Hire is a job board platform that connects data analysts with companies seeking to hire data professionals. Our Service includes:
               </p>
@@ -71,7 +71,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">3. User Accounts</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">User Accounts</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Account Creation</h3>
@@ -96,7 +96,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">4. User Content and Conduct</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">User Content and Conduct</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Content Ownership</h3>
@@ -131,7 +131,7 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">5. Job Postings and Applications</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Job Postings and Applications</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">For Employers</h3>
@@ -160,28 +160,28 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">6. Fees and Payment</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Fees and Payment</h2>
               <p className="text-muted-foreground">
                 Currently, Data Hire offers its services free of charge. We reserve the right to introduce fees for certain features or services in the future, with appropriate notice to users.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">7. Intellectual Property</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Intellectual Property</h2>
               <p className="text-muted-foreground">
                 The Service and its original content, features, and functionality are and will remain the exclusive property of Data Hire and its licensors. The Service is protected by copyright, trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product or service without our prior written consent.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">8. Privacy</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Privacy</h2>
               <p className="text-muted-foreground">
                 Your privacy is important to us. Please review our <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>, which also governs your use of the Service, to understand our practices.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">9. Disclaimer of Warranties</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Disclaimer of Warranties</h2>
               <p className="text-muted-foreground mb-4">
                 The Service is provided on an "AS IS" and "AS AVAILABLE" basis. We expressly disclaim all warranties of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
               </p>
@@ -191,42 +191,42 @@ export default function TermsOfServicePage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">10. Limitation of Liability</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Limitation of Liability</h2>
               <p className="text-muted-foreground">
                 In no event shall Data Hire, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">11. Indemnification</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Indemnification</h2>
               <p className="text-muted-foreground">
                 You agree to indemnify, defend, and hold harmless Data Hire and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees).
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">12. Governing Law</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Governing Law</h2>
               <p className="text-muted-foreground">
                 These Terms shall be interpreted and governed by the laws of the jurisdiction in which Data Hire operates, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">13. Changes to Terms</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Changes to Terms</h2>
               <p className="text-muted-foreground">
                 We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">14. Severability</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Severability</h2>
               <p className="text-muted-foreground">
                 If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">15. Contact Information</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Contact Information</h2>
               <p className="text-muted-foreground">
                 If you have any questions about these Terms of Service, please contact us through our <a href="/contact" className="text-primary hover:underline">contact page</a>.
               </p>

@@ -54,35 +54,35 @@ export default function CareerResourcesPage() {
               <h2 className="text-2xl font-semibold text-foreground mb-4">Table of Contents</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <ol className="space-y-1">
-                  <li><a href="#how-to-use" className="text-primary hover:underline">1. How to Use This Page</a></li>
-                  <li><a href="#career-paths" className="text-primary hover:underline">2. Career Paths & Levels</a></li>
-                  <li><a href="#skills-map" className="text-primary hover:underline">3. Skills Map</a></li>
-                  <li><a href="#tooling-guide" className="text-primary hover:underline">4. Tooling Guide</a></li>
-                  <li><a href="#portfolio" className="text-primary hover:underline">5. Portfolio Playbook</a></li>
-                  <li><a href="#resume-linkedin" className="text-primary hover:underline">6. Resume & LinkedIn Templates</a></li>
-                  <li><a href="#cover-letter" className="text-primary hover:underline">7. Cover Letter Template</a></li>
-                  <li><a href="#interview-prep" className="text-primary hover:underline">8. Interview Prep</a></li>
+                  <li><a href="#how-to-use" className="text-primary hover:underline">How to Use This Page</a></li>
+                  <li><a href="#career-paths" className="text-primary hover:underline">Career Paths & Levels</a></li>
+                  <li><a href="#skills-map" className="text-primary hover:underline">Skills Map</a></li>
+                  <li><a href="#tooling-guide" className="text-primary hover:underline">Tooling Guide</a></li>
+                  <li><a href="#portfolio" className="text-primary hover:underline">Portfolio Playbook</a></li>
+                  <li><a href="#resume-linkedin" className="text-primary hover:underline">Resume & LinkedIn Templates</a></li>
+                  <li><a href="#cover-letter" className="text-primary hover:underline">Cover Letter Template</a></li>
+                  <li><a href="#interview-prep" className="text-primary hover:underline">Interview Prep</a></li>
                 </ol>
                 <ol start={9} className="space-y-1">
-                  <li><a href="#take-home" className="text-primary hover:underline">9. Take‑Home Assignment Guide</a></li>
-                  <li><a href="#salary-negotiation" className="text-primary hover:underline">10. Offer, Salary & Negotiation</a></li>
-                  <li><a href="#job-search" className="text-primary hover:underline">11. Job Search Workflow</a></li>
-                  <li><a href="#networking" className="text-primary hover:underline">12. Networking That Works</a></li>
-                  <li><a href="#first-90-days" className="text-primary hover:underline">13. 30/60/90 Day Plan</a></li>
-                  <li><a href="#specialized-tracks" className="text-primary hover:underline">14. Specialized Tracks</a></li>
-                  <li><a href="#data-ethics" className="text-primary hover:underline">15. Data Ethics & Privacy</a></li>
-                  <li><a href="#faq" className="text-primary hover:underline">16. FAQ</a></li>
+                  <li><a href="#take-home" className="text-primary hover:underline">Take‑Home Assignment Guide</a></li>
+                  <li><a href="#salary-negotiation" className="text-primary hover:underline">Offer, Salary & Negotiation</a></li>
+                  <li><a href="#job-search" className="text-primary hover:underline">Job Search Workflow</a></li>
+                  <li><a href="#networking" className="text-primary hover:underline">Networking That Works</a></li>
+                  <li><a href="#first-90-days" className="text-primary hover:underline">30/60/90 Day Plan</a></li>
+                  <li><a href="#specialized-tracks" className="text-primary hover:underline">Specialized Tracks</a></li>
+                  <li><a href="#data-ethics" className="text-primary hover:underline">Data Ethics & Privacy</a></li>
+                  <li><a href="#faq" className="text-primary hover:underline">FAQ</a></li>
                 </ol>
               </div>
               <div className="mt-4 p-4 bg-primary/10 rounded-lg">
                 <p className="text-sm text-muted-foreground">
-                  <strong>Tip:</strong> Use the checklists as your weekly ritual. If you do the work, the work works.
+                  <strong>Tip:</strong> Use the checklists as your weekly ritual.
                 </p>
               </div>
             </div>
 
             <section id="how-to-use" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">1) How to Use This Page</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">How to Use This Page</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Pick a lane & level.</strong> Then follow the Skills Map.</li>
                 <li><strong>Build 2–3 portfolio projects</strong> that mirror real job postings.</li>
@@ -93,7 +93,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="career-paths" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">2) Career Paths & Levels</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Career Paths & Levels</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Paths</h3>
@@ -119,45 +119,45 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="skills-map" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">3) Skills Map (What to Learn, In What Order)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Skills Map (What to Learn, In What Order)</h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">Foundation</h3>
                   <ol className="space-y-1 text-sm text-muted-foreground">
-                    <li>1. Spreadsheet fluency (lookup/index-match/xlookup, pivots, arrays, regex, charts)</li>
-                    <li>2. SQL core (SELECT, WHERE, GROUP BY, HAVING, ORDER, LIMIT)</li>
-                    <li>3. Joins & set ops (INNER/LEFT/RIGHT/FULL, UNION/EXCEPT/INTERSECT)</li>
-                    <li>4. Aggregations & windows (ROW_NUMBER, RANK, SUM/AVG OVER, partitions)</li>
-                    <li>5. Data cleaning (dedupe, outliers, nulls, date/time handling)</li>
+                    <li>Spreadsheet fluency (lookup/index-match/xlookup, pivots, arrays, regex, charts)</li>
+                    <li>SQL core (SELECT, WHERE, GROUP BY, HAVING, ORDER, LIMIT)</li>
+                    <li>Joins & set ops (INNER/LEFT/RIGHT/FULL, UNION/EXCEPT/INTERSECT)</li>
+                    <li>Aggregations & windows (ROW_NUMBER, RANK, SUM/AVG OVER, partitions)</li>
+                    <li>Data cleaning (dedupe, outliers, nulls, date/time handling)</li>
                   </ol>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">Analysis Toolkit</h3>
-                  <ol start={6} className="space-y-1 text-sm text-muted-foreground">
-                    <li>6. Descriptive stats (mean/median, variance, CI, percentiles)</li>
-                    <li>7. Experimentation (A/B, power, lift, significance, pitfalls)</li>
-                    <li>8. Cohorts & funnels (retention, conversion stages, drop‑off)</li>
-                    <li>9. Forecasting basics (seasonality, moving averages, simple regressions)</li>
-                    <li>10. Visualization design (chart choice, clutter reduction, labeling)</li>
+                  <ol className="space-y-1 text-sm text-muted-foreground">
+                    <li>Descriptive stats (mean/median, variance, CI, percentiles)</li>
+                    <li>Experimentation (A/B, power, lift, significance, pitfalls)</li>
+                    <li>Cohorts & funnels (retention, conversion stages, drop‑off)</li>
+                    <li>Forecasting basics (seasonality, moving averages, simple regressions)</li>
+                    <li>Visualization design (chart choice, clutter reduction, labeling)</li>
                   </ol>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">Automation & Production</h3>
-                  <ol start={11} className="space-y-1 text-sm text-muted-foreground">
-                    <li>11. Python or R for EDA & scripting (pandas/dplyr, matplotlib/ggplot)</li>
-                    <li>12. BI tools (Tableau/Power BI/Looker/Mode/Superset) & dashboard craft</li>
-                    <li>13. SQL modeling (CTEs, materialized views, star schemas, date dimensions)</li>
-                    <li>14. Version control (Git basics) & reproducibility (notebooks, dbt basics)</li>
+                  <ol className="space-y-1 text-sm text-muted-foreground">
+                    <li>Python or R for EDA & scripting (pandas/dplyr, matplotlib/ggplot)</li>
+                    <li>BI tools (Tableau/Power BI/Looker/Mode/Superset) & dashboard craft</li>
+                    <li>SQL modeling (CTEs, materialized views, star schemas, date dimensions)</li>
+                    <li>Version control (Git basics) & reproducibility (notebooks, dbt basics)</li>
                   </ol>
                 </div>
 
                 <div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">Soft Skills</h3>
-                  <ol start={15} className="space-y-1 text-sm text-muted-foreground">
-                    <li>15. Framing questions, stakeholder interviews, storytelling, writing clear TL;DRs.</li>
+                  <ol className="space-y-1 text-sm text-muted-foreground">
+                    <li>Framing questions, stakeholder interviews, storytelling, writing clear TL;DRs.</li>
                   </ol>
                 </div>
               </div>
@@ -170,7 +170,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="tooling-guide" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">4) Tooling Guide</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Tooling Guide</h2>
 
               <div className="space-y-6">
                 <div>
@@ -213,7 +213,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="portfolio" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">5) Portfolio Playbook</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Portfolio Playbook</h2>
 
               <div className="mb-6">
                 <p className="text-lg text-muted-foreground mb-4">
@@ -247,7 +247,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="resume-linkedin" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">6) Resume & LinkedIn Templates</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Resume & LinkedIn Templates</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Resume (1 page)</h3>
@@ -277,7 +277,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="cover-letter" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">7) Cover Letter Template</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Cover Letter Template</h2>
 
               <div className="bg-card border border-border rounded-lg p-6">
                 <div className="space-y-4 text-sm">
@@ -304,7 +304,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="interview-prep" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">8) Interview Prep</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Interview Prep</h2>
 
               <div className="space-y-6">
                 <div>
@@ -356,7 +356,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="take-home" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">9) Take‑Home Assignment Guide (and Rubric)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Take‑Home Assignment Guide (and Rubric)</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">What good looks like</h3>
@@ -369,23 +369,19 @@ export default function CareerResourcesPage() {
 
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Self‑Score Rubric (0–3)</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li><strong>Business Understanding:</strong> 0 (none) → 3 (sharp framing, measurable goal)</li>
-                    <li><strong>Data Hygiene:</strong> 0 (messy) → 3 (validated, edge cases handled)</li>
-                    <li><strong>SQL/Code Quality:</strong> 0 (hard to read) → 3 (modular, tested)</li>
-                  </ul>
-                  <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li><strong>Insights & Storytelling:</strong> 0 (descriptive only) → 3 (actionable drivers)</li>
-                    <li><strong>Visualization:</strong> 0 (clutter) → 3 (clean, labeled, purposeful)</li>
-                    <li><strong>Reproducibility:</strong> 0 (can't run) → 3 (one‑click/clear steps)</li>
-                  </ul>
-                </div>
+                <ul className="space-y-1 text-sm text-muted-foreground">
+                  <li><strong>Business Understanding:</strong> 0 (none) → 3 (sharp framing, measurable goal)</li>
+                  <li><strong>Data Hygiene:</strong> 0 (messy) → 3 (validated, edge cases handled)</li>
+                  <li><strong>SQL/Code Quality:</strong> 0 (hard to read) → 3 (modular, tested)</li>
+                  <li><strong>Insights & Storytelling:</strong> 0 (descriptive only) → 3 (actionable drivers)</li>
+                  <li><strong>Visualization:</strong> 0 (clutter) → 3 (clean, labeled, purposeful)</li>
+                  <li><strong>Reproducibility:</strong> 0 (can't run) → 3 (one‑click/clear steps)</li>
+                </ul>
               </div>
             </section>
 
             <section id="salary-negotiation" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">10) Offer, Salary & Negotiation</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Offer, Salary & Negotiation</h2>
 
               <div className="space-y-6">
                 <div>
@@ -411,7 +407,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="job-search" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">11) Job Search Workflow (Weekly Plan + Tracker)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Job Search Workflow (Weekly Plan + Tracker)</h2>
 
               <div className="space-y-6">
                 <div>
@@ -432,7 +428,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="networking" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">12) Networking That Works</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Networking That Works</h2>
 
               <div className="space-y-6">
                 <div>
@@ -457,7 +453,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="first-90-days" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">13) 30/60/90 Day Plan (Once You're Hired)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">30/60/90 Day Plan (Once You're Hired)</h2>
 
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Days 0–30:</strong> Meet stakeholders; map metrics and data sources; fix a nagging reporting pain; ship a small dashboard.</li>
@@ -467,7 +463,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="specialized-tracks" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">14) Specialized Tracks</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Specialized Tracks</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -501,7 +497,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="data-ethics" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">15) Data Ethics & Privacy Basics</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Data Ethics & Privacy Basics</h2>
 
               <ul className="space-y-1 text-muted-foreground">
                 <li>• Minimize PII, use least‑privilege access, log data lineage.</li>
@@ -511,7 +507,7 @@ export default function CareerResourcesPage() {
             </section>
 
             <section id="faq" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">16) FAQ</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">FAQ</h2>
 
               <div className="space-y-6">
                 <div>

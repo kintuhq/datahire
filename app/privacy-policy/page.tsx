@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="prose prose-lg max-w-none space-y-8">
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Introduction</h2>
               <p className="text-muted-foreground mb-4">
                 Data Hire ("we," "our," or "us") operates the datahire.co website (the "Service"). This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data.
               </p>
@@ -61,7 +61,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">2. Information We Collect</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Information We Collect</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Personal Information</h3>
@@ -93,7 +93,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">3. How We Use Your Information</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">How We Use Your Information</h2>
               <p className="text-muted-foreground mb-3">
                 We use the collected data for various purposes:
               </p>
@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">4. Data Sharing and Disclosure</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Data Sharing and Disclosure</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Job Matching</h3>
@@ -136,21 +136,21 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">5. Data Security</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Data Security</h2>
               <p className="text-muted-foreground">
                 The security of your data is important to us. We strive to use commercially acceptable means to protect your personal data, but remember that no method of transmission over the Internet or method of electronic storage is 100% secure.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">6. Data Retention</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Data Retention</h2>
               <p className="text-muted-foreground">
                 We will retain your personal data only for as long as necessary for the purposes set out in this Privacy Policy. We will retain and use your personal data to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our legal agreements and policies.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">7. Your Data Protection Rights</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Your Data Protection Rights</h2>
               <p className="text-muted-foreground mb-3">
                 Depending on your location, you may have the following rights regarding your personal data:
               </p>
@@ -168,21 +168,21 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">8. Children's Privacy</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Children's Privacy</h2>
               <p className="text-muted-foreground">
                 Our Service does not address anyone under the age of 18. We do not knowingly collect personally identifiable information from anyone under 18. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us through our <a href="/contact" className="text-primary hover:underline">contact page</a>.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">9. Changes to This Privacy Policy</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Changes to This Privacy Policy</h2>
               <p className="text-muted-foreground">
                 We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date at the top of this policy. You are advised to review this Privacy Policy periodically for any changes.
               </p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">10. Contact Us</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-4">Contact Us</h2>
               <p className="text-muted-foreground">
                 If you have any questions about this Privacy Policy, please contact us through our <a href="/contact" className="text-primary hover:underline">contact page</a>.
               </p>

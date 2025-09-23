@@ -54,24 +54,24 @@ export default function HiringGuidePage() {
               <h2 className="text-2xl font-semibold text-foreground mb-4">Table of Contents</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <ol className="space-y-1">
-                  <li><a href="#role-definition" className="text-primary hover:underline">1. Role Definition & Business Outcomes</a></li>
-                  <li><a href="#competency-model" className="text-primary hover:underline">2. Competency Model & Levels</a></li>
-                  <li><a href="#job-descriptions" className="text-primary hover:underline">3. Job Description Templates (JD)</a></li>
-                  <li><a href="#sourcing" className="text-primary hover:underline">4. Sourcing Strategy</a></li>
-                  <li><a href="#screening" className="text-primary hover:underline">5. Screening & Scoping Call</a></li>
-                  <li><a href="#interview-loop" className="text-primary hover:underline">6. Interview Loop Design</a></li>
-                  <li><a href="#question-banks" className="text-primary hover:underline">7. Question Banks</a></li>
-                  <li><a href="#take-home" className="text-primary hover:underline">8. Take‑Home Assignment + Rubric</a></li>
+                  <li><a href="#role-definition" className="text-primary hover:underline">Role Definition & Business Outcomes</a></li>
+                  <li><a href="#competency-model" className="text-primary hover:underline">Competency Model & Levels</a></li>
+                  <li><a href="#job-descriptions" className="text-primary hover:underline">Job Description Templates (JD)</a></li>
+                  <li><a href="#sourcing" className="text-primary hover:underline">Sourcing Strategy</a></li>
+                  <li><a href="#screening" className="text-primary hover:underline">Screening & Scoping Call</a></li>
+                  <li><a href="#interview-loop" className="text-primary hover:underline">Interview Loop Design</a></li>
+                  <li><a href="#question-banks" className="text-primary hover:underline">Question Banks</a></li>
+                  <li><a href="#take-home" className="text-primary hover:underline">Take‑Home Assignment + Rubric</a></li>
                 </ol>
                 <ol start={9} className="space-y-1">
-                  <li><a href="#scorecards" className="text-primary hover:underline">9. Scorecards & Decision Framework</a></li>
-                  <li><a href="#compensation" className="text-primary hover:underline">10. Compensation & Career Ladders</a></li>
-                  <li><a href="#dei" className="text-primary hover:underline">11. DEI & Bias Reduction</a></li>
-                  <li><a href="#references" className="text-primary hover:underline">12. Reference Checks</a></li>
-                  <li><a href="#offer-strategy" className="text-primary hover:underline">13. Offer Strategy & Closing</a></li>
-                  <li><a href="#onboarding" className="text-primary hover:underline">14. Onboarding: 30/60/90</a></li>
-                  <li><a href="#success-metrics" className="text-primary hover:underline">15. Success Metrics</a></li>
-                  <li><a href="#pitfalls" className="text-primary hover:underline">16. Common Pitfalls</a></li>
+                  <li><a href="#scorecards" className="text-primary hover:underline">Scorecards & Decision Framework</a></li>
+                  <li><a href="#compensation" className="text-primary hover:underline">Compensation & Career Ladders</a></li>
+                  <li><a href="#dei" className="text-primary hover:underline">DEI & Bias Reduction</a></li>
+                  <li><a href="#references" className="text-primary hover:underline">Reference Checks</a></li>
+                  <li><a href="#offer-strategy" className="text-primary hover:underline">Offer Strategy & Closing</a></li>
+                  <li><a href="#onboarding" className="text-primary hover:underline">Onboarding: 30/60/90</a></li>
+                  <li><a href="#success-metrics" className="text-primary hover:underline">Success Metrics</a></li>
+                  <li><a href="#pitfalls" className="text-primary hover:underline">Common Pitfalls</a></li>
                 </ol>
               </div>
               <div className="mt-4 p-4 bg-primary/10 rounded-lg">
@@ -82,7 +82,7 @@ export default function HiringGuidePage() {
             </div>
 
             <section id="role-definition" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">1) Role Definition & Business Outcomes</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Role Definition & Business Outcomes</h2>
               <p className="text-muted-foreground mb-6">Before posting, align on <strong>why</strong> you are hiring.</p>
 
               <div className="mb-6">
@@ -116,7 +116,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="competency-model" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">2) Competency Model & Levels</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Competency Model & Levels</h2>
               <p className="text-muted-foreground mb-6">Hire against explicit competencies; calibrate by level.</p>
 
               <div className="mb-6">
@@ -143,7 +143,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="job-descriptions" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">3) Job Description Templates (JD)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Job Description Templates (JD)</h2>
               <p className="text-muted-foreground mb-6">Use clear, impact‑oriented JDs. Avoid laundry lists of tools.</p>
 
               <div className="mb-8">
@@ -197,7 +197,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="sourcing" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">4) Sourcing Strategy (Inbound + Outbound)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Sourcing Strategy (Inbound + Outbound)</h2>
 
               <div className="space-y-6">
                 <div>
@@ -229,7 +229,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="screening" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">5) Screening & Scoping Call (15–30 min)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Screening & Scoping Call (15–30 min)</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Goals</h3>
@@ -252,7 +252,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="interview-loop" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">6) Interview Loop Design (Structure & Timing)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Interview Loop Design (Structure & Timing)</h2>
               <p className="text-muted-foreground mb-6">Aim for a <strong>4–5 stage</strong> loop completed within <strong>2 weeks</strong>. Keep tasks scoped.</p>
 
               <ol className="space-y-2 text-muted-foreground mb-6">
@@ -271,7 +271,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="question-banks" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">7) Question Banks</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Question Banks</h2>
 
               <div className="space-y-6">
                 <div>
@@ -320,7 +320,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="take-home" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">8) Take‑Home Assignment (Optional) + Rubric</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Take‑Home Assignment (Optional) + Rubric</h2>
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3">Design</h3>
@@ -355,7 +355,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="scorecards" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">9) Scorecards & Decision Framework</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Scorecards & Decision Framework</h2>
               <p className="text-muted-foreground mb-6">Use structured scorecards per interview; decide on <strong>evidence</strong>, not averages.</p>
 
               <div className="mb-6">
@@ -380,7 +380,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="compensation" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">10) Compensation, Titles & Career Ladders (Guidance)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Compensation, Titles & Career Ladders (Guidance)</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Calibrate titles conservatively; align with scope and expected autonomy.</li>
                 <li>• Comp mix: base + bonus; equity for growth roles. Publish bands where possible.</li>
@@ -390,7 +390,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="dei" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">11) DEI, Bias Reduction & Candidate Experience</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">DEI, Bias Reduction & Candidate Experience</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• <strong>Structured interviews</strong> with consistent prompts and rubrics.</li>
                 <li>• <strong>Work samples over resumes</strong>; de‑emphasize pedigree/brand names.</li>
@@ -400,7 +400,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="references" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">12) Reference Checks (What to Ask)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Reference Checks (What to Ask)</h2>
               <div className="bg-card border border-border rounded-lg p-4 space-y-2 text-sm">
                 <p>"What business outcomes did they directly influence?"</p>
                 <p>"How did they handle ambiguous asks and conflicting stakeholders?"</p>
@@ -409,7 +409,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="offer-strategy" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">13) Offer Strategy & Closing</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Offer Strategy & Closing</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Move quickly with a written summary of scope, manager, and 90‑day goals.</li>
                 <li>• Share team artifacts (dashboards, docs) to make work tangible.</li>
@@ -418,7 +418,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="onboarding" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">14) Onboarding: 30/60/90 for New Analysts</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Onboarding: 30/60/90 for New Analysts</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>0–30 days:</strong> meet stakeholders, access secured, metric dictionary reviewed, ship one small dashboard; log data quality issues.</li>
                 <li><strong>31–60 days:</strong> own a KPI; establish weekly reporting; document definitions; fix 1–2 data quality issues.</li>
@@ -427,7 +427,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="success-metrics" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">15) Success Metrics & First‑Year Outcomes</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Success Metrics & First‑Year Outcomes</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• Time‑to‑first‑insight (TTI) and dashboard adoption</li>
                 <li>• % of decisions supported by data (tracked in product/ops reviews)</li>
@@ -437,7 +437,7 @@ export default function HiringGuidePage() {
             </section>
 
             <section id="pitfalls" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">16) Common Pitfalls (and How to Avoid Them)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Common Pitfalls (and How to Avoid Them)</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li>• <strong>Vague JD</strong> → Tie to specific business outcomes and KPIs.</li>
                 <li>• <strong>Tool checklist interviews</strong> → Use real scenarios and scorecards.</li>

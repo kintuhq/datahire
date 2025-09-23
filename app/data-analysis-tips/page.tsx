@@ -54,28 +54,28 @@ export default function DataAnalysisTipsPage() {
               <h2 className="text-2xl font-semibold text-foreground mb-4">Table of Contents</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <ol className="space-y-1">
-                  <li><a href="#principles" className="text-primary hover:underline">1. Principles & Mindset</a></li>
-                  <li><a href="#workflow" className="text-primary hover:underline">2. Analysis Workflow</a></li>
-                  <li><a href="#problem-framing" className="text-primary hover:underline">3. Problem Framing & Hypotheses</a></li>
-                  <li><a href="#data-access" className="text-primary hover:underline">4. Data Access & Validation</a></li>
-                  <li><a href="#cleaning" className="text-primary hover:underline">5. Cleaning & Preparation Checklist</a></li>
-                  <li><a href="#eda" className="text-primary hover:underline">6. Exploratory Data Analysis (EDA)</a></li>
-                  <li><a href="#metrics" className="text-primary hover:underline">7. Metrics & Definitions</a></li>
-                  <li><a href="#sql-patterns" className="text-primary hover:underline">8. SQL Patterns That Save Time</a></li>
-                  <li><a href="#python-r" className="text-primary hover:underline">9. Python/R Patterns for EDA</a></li>
-                  <li><a href="#visualization" className="text-primary hover:underline">10. Visualization & Dashboard Craft</a></li>
+                  <li><a href="#principles" className="text-primary hover:underline">Principles & Mindset</a></li>
+                  <li><a href="#workflow" className="text-primary hover:underline">Analysis Workflow</a></li>
+                  <li><a href="#problem-framing" className="text-primary hover:underline">Problem Framing & Hypotheses</a></li>
+                  <li><a href="#data-access" className="text-primary hover:underline">Data Access & Validation</a></li>
+                  <li><a href="#cleaning" className="text-primary hover:underline">Cleaning & Preparation Checklist</a></li>
+                  <li><a href="#eda" className="text-primary hover:underline">Exploratory Data Analysis (EDA)</a></li>
+                  <li><a href="#metrics" className="text-primary hover:underline">Metrics & Definitions</a></li>
+                  <li><a href="#sql-patterns" className="text-primary hover:underline">SQL Patterns That Save Time</a></li>
+                  <li><a href="#python-r" className="text-primary hover:underline">Python/R Patterns for EDA</a></li>
+                  <li><a href="#visualization" className="text-primary hover:underline">Visualization & Dashboard Craft</a></li>
                 </ol>
                 <ol start={11} className="space-y-1">
-                  <li><a href="#experimentation" className="text-primary hover:underline">11. Experimentation & Causal Thinking</a></li>
-                  <li><a href="#storytelling" className="text-primary hover:underline">12. Storytelling & Executive Summaries</a></li>
-                  <li><a href="#stakeholder-comm" className="text-primary hover:underline">13. Stakeholder Communication</a></li>
-                  <li><a href="#reproducibility" className="text-primary hover:underline">14. Reproducibility & Version Control</a></li>
-                  <li><a href="#quality-assurance" className="text-primary hover:underline">15. Quality Assurance & Review</a></li>
-                  <li><a href="#performance" className="text-primary hover:underline">16. Performance, Cost & Scale Tips</a></li>
-                  <li><a href="#privacy-security" className="text-primary hover:underline">17. Privacy, Security & Data Ethics</a></li>
-                  <li><a href="#pitfalls" className="text-primary hover:underline">18. Common Pitfalls</a></li>
-                  <li><a href="#templates" className="text-primary hover:underline">19. Templates & Snippets</a></li>
-                  <li><a href="#resources" className="text-primary hover:underline">20. Resources & Further Practice</a></li>
+                  <li><a href="#experimentation" className="text-primary hover:underline">Experimentation & Causal Thinking</a></li>
+                  <li><a href="#storytelling" className="text-primary hover:underline">Storytelling & Executive Summaries</a></li>
+                  <li><a href="#stakeholder-comm" className="text-primary hover:underline">Stakeholder Communication</a></li>
+                  <li><a href="#reproducibility" className="text-primary hover:underline">Reproducibility & Version Control</a></li>
+                  <li><a href="#quality-assurance" className="text-primary hover:underline">Quality Assurance & Review</a></li>
+                  <li><a href="#performance" className="text-primary hover:underline">Performance, Cost & Scale Tips</a></li>
+                  <li><a href="#privacy-security" className="text-primary hover:underline">Privacy, Security & Data Ethics</a></li>
+                  <li><a href="#pitfalls" className="text-primary hover:underline">Common Pitfalls</a></li>
+                  <li><a href="#templates" className="text-primary hover:underline">Templates & Snippets</a></li>
+                  <li><a href="#resources" className="text-primary hover:underline">Resources & Further Practice</a></li>
                 </ol>
               </div>
               <div className="mt-4 p-4 bg-primary/10 rounded-lg">
@@ -86,7 +86,7 @@ export default function DataAnalysisTipsPage() {
             </div>
 
             <section id="principles" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">1) Principles & Mindset</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Principles & Mindset</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Decision‑centric:</strong> Start with the decision someone will make using your output. Work backwards.</li>
                 <li><strong>Iterative:</strong> Ship small, verifiable increments. Validate direction before polishing.</li>
@@ -97,7 +97,7 @@ export default function DataAnalysisTipsPage() {
             </section>
 
             <section id="workflow" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">2) Analysis Workflow (End‑to‑End)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Analysis Workflow (End‑to‑End)</h2>
               <ol className="space-y-2 text-muted-foreground">
                 <li><strong>1. Clarify goal</strong> → what decision, which metric(s), by when, for whom.</li>
                 <li><strong>2. Collect & validate</strong> → find tables/sources, row counts, date ranges, join keys.</li>
@@ -111,7 +111,7 @@ export default function DataAnalysisTipsPage() {
             </section>
 
             <section id="problem-framing" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">3) Problem Framing & Hypotheses</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Problem Framing & Hypotheses</h2>
               <ul className="space-y-2 text-muted-foreground mb-6">
                 <li><strong>One‑liner brief:</strong> "We are investigating [X] because [Y outcome]. Success = [metric moves by Z]. Deadline: [date]."</li>
                 <li><strong>Assumptions log:</strong> Note what must be true (e.g., tracking is accurate past N days).</li>
@@ -129,7 +129,7 @@ export default function DataAnalysisTipsPage() {
             </section>
 
             <section id="data-access" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">4) Data Access & Validation</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Data Access & Validation</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Row counts & ranges:</strong> Check min/max dates; spot gaps; confirm timezone handling.</li>
                 <li><strong>Join keys:</strong> Cardinality checks (1:1? 1:N?); detect duplicate keys.</li>
@@ -140,7 +140,7 @@ export default function DataAnalysisTipsPage() {
             </section>
 
             <section id="cleaning" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">5) Cleaning & Preparation Checklist</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Cleaning & Preparation Checklist</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Types:</strong> Cast strings→dates/ints; standardize currencies/units.</li>
                 <li><strong>Nulls:</strong> Decide fill/drop rules; differentiate truly missing vs not applicable.</li>
@@ -153,7 +153,7 @@ export default function DataAnalysisTipsPage() {
             </section>
 
             <section id="eda" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">6) Exploratory Data Analysis (EDA)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Exploratory Data Analysis (EDA)</h2>
               <ul className="space-y-2 text-muted-foreground mb-6">
                 <li><strong>Start with shapes:</strong> n rows/cols, NA %, basic uniques, top categories.</li>
                 <li><strong>Univariate plots:</strong> histograms, boxplots, ECDFs to see spread/outliers.</li>
@@ -170,7 +170,7 @@ export default function DataAnalysisTipsPage() {
             </section>
 
             <section id="metrics" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">7) Metrics & Definitions (Build a Source of Truth)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Metrics & Definitions (Build a Source of Truth)</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Definition doc:</strong> Name, formula, filters, grain, source tables, owner.</li>
                 <li><strong>KPI types:</strong> level (count), rate (%), ratio (per user), change (∆), index (=100 baseline).</li>
@@ -180,7 +180,7 @@ export default function DataAnalysisTipsPage() {
             </section>
 
             <section id="sql-patterns" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">8) SQL Patterns That Save Time</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">SQL Patterns That Save Time</h2>
 
               <div className="space-y-6">
                 <div>
@@ -243,7 +243,7 @@ where a.act_week is not null;`}</code></pre>
             </section>
 
             <section id="python-r" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">9) Python/R Patterns for EDA</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Python/R Patterns for EDA</h2>
 
               <div className="space-y-6">
                 <div>
@@ -282,7 +282,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="visualization" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">10) Visualization & Dashboard Craft</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Visualization & Dashboard Craft</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>One‑page narrative:</strong> Title states the takeaway; subtitle gives context.</li>
                 <li><strong>Chart choice:</strong> bars for discrete comparisons, lines for trends, scatter for relationships, box/violin for distributions.</li>
@@ -294,7 +294,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="experimentation" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">11) Experimentation & Causal Thinking</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Experimentation & Causal Thinking</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Before you run:</strong> define primary metric, MDE (minimum detectable effect), power, unit of randomization, and guardrails.</li>
                 <li><strong>Sanity checks:</strong> sample ratio mismatch, pre‑period balance, invariant metrics.</li>
@@ -304,7 +304,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="storytelling" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">12) Storytelling & Executive Summaries</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Storytelling & Executive Summaries</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>TL;DR first:</strong> 3–5 bullet takeaways; what changed, why, what to do.</li>
                 <li><strong>Structure:</strong> Context → Insight → Recommendation → Impact estimate → Risks.</li>
@@ -314,7 +314,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="stakeholder-comm" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">13) Stakeholder Communication</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Stakeholder Communication</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Intake questions:</strong> Who is the decision owner? Deadline? Must‑have vs nice‑to‑have?</li>
                 <li><strong>Checkpoints:</strong> share a wireframe/mock before heavy lifting; confirm definitions.</li>
@@ -324,7 +324,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="reproducibility" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">14) Reproducibility & Version Control</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Reproducibility & Version Control</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Project layout:</strong> <code>/data</code>, <code>/notebooks</code>, <code>/src</code>, <code>/reports</code>, <code>/docs</code>.</li>
                 <li><strong>Environment:</strong> <code>requirements.txt</code>/<code>environment.yml</code>; pin versions.</li>
@@ -335,7 +335,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="quality-assurance" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">15) Quality Assurance & Review</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Quality Assurance & Review</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Unit tests:</strong> for key transforms (e.g., revenue calc); validate joins (row counts before/after).</li>
                 <li><strong>Spot checks:</strong> manual samples; compare against known dashboards/reports.</li>
@@ -345,7 +345,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="performance" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">16) Performance, Cost & Scale Tips</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Performance, Cost & Scale Tips</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>SQL:</strong> project only needed columns; pre‑aggregate; use partitions & clustering well.</li>
                 <li><strong>Pipelines:</strong> cache intermediate outputs; schedule off‑peak when possible.</li>
@@ -355,7 +355,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="privacy-security" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">17) Privacy, Security & Data Ethics</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Privacy, Security & Data Ethics</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Least privilege:</strong> restrict PII; separate keys & secrets; rotate access.</li>
                 <li><strong>Minimize:</strong> collect only what's necessary; define retention & deletion.</li>
@@ -365,7 +365,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="pitfalls" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">18) Common Pitfalls (and How to Avoid Them)</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Common Pitfalls (and How to Avoid Them)</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li><strong>Metric drift:</strong> definition changes without comms → version metrics & broadcast changes.</li>
                 <li><strong>Double counting:</strong> joins across multi‑touch tables → dedupe rules & unique keys.</li>
@@ -377,7 +377,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="templates" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">19) Templates & Snippets</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Templates & Snippets</h2>
 
               <div className="space-y-6">
                 <div>
@@ -417,7 +417,7 @@ series <- spine %>% left_join(df %>% count(date, wt = revenue, name = 'revenue')
             </section>
 
             <section id="resources" className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">20) Resources & Further Practice</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-4">Resources & Further Practice</h2>
               <ul className="space-y-2 text-muted-foreground">
                 <li>Practice datasets: make 2–3 small, realistic projects (KPIs, cohorts, A/B).</li>
                 <li>Participate in community challenges; rewrite dashboards you admire.</li>
