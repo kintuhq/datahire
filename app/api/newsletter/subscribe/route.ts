@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
 import { newsletterSubscribers } from '@/lib/db/schema'
 import { rateLimit, rateLimitConfigs } from '@/lib/rate-limit'
+import { addToNewsletterAudience } from '@/lib/email'
 import { eq } from 'drizzle-orm'
 import { z } from 'zod'
 
@@ -53,6 +54,13 @@ export async function POST(request: NextRequest) {
           .set(updateData)
           .where(eq(newsletterSubscribers.email, email))
 
+        // Add to Resend audience on reactivation
+        try {
+          await addToNewsletterAudience(email, name || existingSubscriber[0].name)
+        } catch (error) {
+          console.log('Resend audience sync failed on reactivation (non-critical):', error)
+        }
+
         return NextResponse.json({
           success: true,
           message: 'Welcome back! Your subscription has been reactivated.'
@@ -71,6 +79,13 @@ export async function POST(request: NextRequest) {
     }
 
     const [subscriber] = await db.insert(newsletterSubscribers).values(insertData).returning()
+
+    // Add to Resend audience
+    try {
+      await addToNewsletterAudience(email, name)
+    } catch (error) {
+      console.log('Resend audience sync failed (non-critical):', error)
+    }
 
     // Send welcome email (optional - you can implement this later)
     try {

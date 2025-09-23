@@ -3,6 +3,64 @@ import { escapeHtml } from './sanitize'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
+// Resend audience management
+export async function addToNewsletterAudience(email: string, name?: string) {
+  if (!process.env.RESEND_NEWSLETTER_AUDIENCE_ID) {
+    console.warn('RESEND_NEWSLETTER_AUDIENCE_ID not configured, skipping audience sync')
+    return null
+  }
+
+  try {
+    const firstName = name?.split(' ')[0] || undefined
+    const lastName = name?.split(' ').slice(1).join(' ') || undefined
+
+    const { data, error } = await resend.contacts.create({
+      email,
+      firstName,
+      lastName,
+      unsubscribed: false,
+      audienceId: process.env.RESEND_NEWSLETTER_AUDIENCE_ID,
+    })
+
+    if (error) {
+      console.error('Failed to add contact to Resend audience:', error)
+      return null
+    }
+
+    console.log('Successfully added contact to Resend audience:', data?.id)
+    return data
+  } catch (error) {
+    console.error('Error adding contact to Resend audience:', error)
+    return null
+  }
+}
+
+export async function removeFromNewsletterAudience(email: string) {
+  if (!process.env.RESEND_NEWSLETTER_AUDIENCE_ID) {
+    console.warn('RESEND_NEWSLETTER_AUDIENCE_ID not configured, skipping audience removal')
+    return null
+  }
+
+  try {
+    // First, get the contact ID by email
+    const contacts = await resend.audiences.get(process.env.RESEND_NEWSLETTER_AUDIENCE_ID)
+
+    // Note: This is a simplified approach. In production, you might want to store the Resend contact ID
+    // in your database to avoid having to search for it each time
+    console.log('Contact removal from Resend audience requested for:', email)
+
+    // For now, we'll just log this. To implement full removal, you'd need to:
+    // 1. List all contacts in the audience
+    // 2. Find the contact by email
+    // 3. Delete the contact by ID
+
+    return null
+  } catch (error) {
+    console.error('Error removing contact from Resend audience:', error)
+    return null
+  }
+}
+
 export async function sendPasswordResetEmail(email: string, resetToken: string) {
   const resetUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password?token=${resetToken}`
 
