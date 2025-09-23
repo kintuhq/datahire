@@ -46,7 +46,7 @@ export default function TermsOfServicePage() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold text-foreground mb-6">Terms of Service</h1>
           <p className="text-muted-foreground mb-8">
-            Last updated: January 1, 2025
+            Last updated: September 20, 2025
           </p>
 
           <div className="prose prose-lg max-w-none space-y-8">
@@ -207,7 +207,7 @@ export default function TermsOfServicePage() {
             <section>
               <h2 className="text-2xl font-bold text-foreground mb-4">Governing Law</h2>
               <p className="text-muted-foreground">
-                These Terms shall be interpreted and governed by the laws of the jurisdiction in which Data Hire operates, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
+                These Terms shall be interpreted and governed by the laws of the United States, without regard to its conflict of law provisions. Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
               </p>
             </section>
 
